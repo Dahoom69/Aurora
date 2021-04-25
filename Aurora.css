@@ -1,0 +1,50 @@
+/*         ,ggg,   ,ggg,         gg  ,ggggggggggg,      _,gggggg,_      ,ggggggggggg,              ,ggg,  
+          dP""8I  dP""Y8a        88 dP"""88""""""Y8,  ,d8P""d8P"Y8b,   dP"""88""""""Y8,           dP""8I  
+         dP   88  Yb, `88        88 Yb,  88      `8b ,d8'   Y8   "8b,dPYb,  88      `8b          dP   88  
+        dP    88   `"  88        88  `"  88      ,8P d8'    `Ybaaad88P' `"  88      ,8P         dP    88  
+       ,8'    88       88        88      88aaaad8P"  8P       `""""Y8       88aaaad8P"         ,8'    88  
+       d88888888       88        88      88""""Yb,   8b            d8       88""""Yb,          d88888888  
+ __   ,8"     88       88        88      88     "8b  Y8,          ,8P       88     "8b   __   ,8"     88  
+dP"  ,8P      Y8       88        88      88      `8i `Y8,        ,8P'       88      `8i dP"  ,8P      Y8  
+Yb,_,dP       `8b,     Y8b,____,d88,     88       Yb, `Y8b,,__,,d8P'        88       Yb,Yb,_,dP       `8b,
+ "Y8P"         `Y8      "Y888888P"Y8     88        Y8   `"Y8888P"'          88        Y8 "Y8P"         `Y8
+
+V.0.1
+Author: Rayan(Dahoom)#0113
+Repo:https://github.com/Dahoom69/Aurora
+##################################################################################################################################
+Aurora is a Fork of Spectra#7698's Nocturnal theme, with some additions by Rayan(Dahoom)#0113, Spectra's permission was granted
+the purpose of it is to make it work on powercord and uhh look good I guess?
+This theme can be used in both Dark and Light modes with Light mode offering a warmer color palette.
+You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
+################################################################################################################################## */
+/* Dark Mode Variables */
+.theme-dark{
+  --header-primary: #fff; /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
+  --header-secondary: #b9bbbe; /* Secondary text stuff like channel desc, white text in code blocks, etc... */
+  --text-normal: #dcddde; /* Chat, Home icon at the top left, "... is typing", Chat, etc... */
+  --text-muted: #72767d; /* "Discord" in the Window bar, the "#,book,speeker, etc..." icons before channels, time stamps, etc.. */
+  --text-link: #00b0f4; /* Links, and text inside embeds */
+  --channels-default: #8e9297; /* Read channels, Catagory names, setting's catagories */
+  --interactive-normal: #b9bbbe; /* the "+" in chat area, and a lot of other icons, Settings  */
+  --interactive-hover: #dcddde; /* Same as above but on hover */
+  --interactive-active: #fff; /* Activated stuff, Unread channels, VC options */
+  --interactive-muted: #4f545c; /* Muted channels, Muted catagories */
+  --background-primary: #36393f; /* Main channel chat area, Top bar, And the right side of settings */
+  --background-secondary: #2f3136; /* Chanels / Members bar, Left side of Settings */
+  --background-secondary-alt: #292b2f; /* User Ara box, some stuff in settings */
+  --background-tertiary: #202225; /* Window bar, Server list bar, Search date options, Active options in Settings */
+  --background-accent: #4f545c; /* New unreads, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
+  --background-floating: #18191c; /* Tooltips and Server context menu */
+  --background-mobile-primary: #36393f; /* idk what this does */
+  --background-mobile-secondary: #2f3136; /* idk what this does */
+  --background-modifier-hover: rgba(79,84,92,0.16); /* Background when hovering over Channels, Users, and Buttons, etc... */
+  --background-modifier-active: rgba(79,84,92,0.24); /* Background when Clicking the stuff above */
+  --background-modifier-selected: rgba(79,84,92,0.32); /* Background when the stuff above is selected */
+  --background-modifier-accent: hsla(0,0%,100%,0.06); /* Small thin dividers in Code blocks, Settings, etc... */
+  --scrollbar-thin-thumb: #202225; /* The movable part of the Scrollerbar in Context menus */
+  --scrollbar-thin-track: transparent; /* The Scrollerbar track for the above */
+  --scrollbar-auto-thumb: #202225; /* The movable part of the Scrollerbar in chat */
+  --scrollbar-auto-track: #2e3338; /* The Scrollerbar track for the above */
+  --focus-primary: #00b0f4; /* Glowy border? around some minor stuff in settings */
+}
