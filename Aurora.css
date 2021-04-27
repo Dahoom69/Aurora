@@ -12,39 +12,167 @@ Yb,_,dP       `8b,     Y8b,____,d88,     88       Yb, `Y8b,,__,,d8P'        88  
 V.0.1
 Author: Rayan(Dahoom)#0113
 Repo:https://github.com/Dahoom69/Aurora
-##################################################################################################################################
+/* ##################################################################################################################################
 Aurora is a Fork of Spectra#7698's Nocturnal theme, with some additions by Rayan(Dahoom)#0113, Spectra's permission was granted
-the purpose of it is to make it work on powercord and uhh look good I guess?
+the purpose of it is to make it work on Powercord and uhh look good I guess? Any feedback is welcome.
 This theme can be used in both Dark and Light modes with Light mode offering a warmer color palette.
 You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
-################################################################################################################################## */
+/* ##################################################################################################################################
+
+
 /* Dark Mode Variables */
-.theme-dark{
-  --header-primary: #fff; /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
-  --header-secondary: #b9bbbe; /* Secondary text stuff like channel desc, white text in code blocks, etc... */
-  --text-normal: #dcddde; /* Chat, Home icon at the top left, "... is typing", Chat, etc... */
-  --text-muted: #72767d; /* "Discord" in the Window bar, the "#,book,speeker, etc..." icons before channels, time stamps, etc.. */
-  --text-link: #00b0f4; /* Links, and text inside embeds */
-  --channels-default: #8e9297; /* Read channels, Catagory names, setting's catagories */
-  --interactive-normal: #b9bbbe; /* the "+" in chat area, and a lot of other icons, Settings  */
-  --interactive-hover: #dcddde; /* Same as above but on hover */
-  --interactive-active: #fff; /* Activated stuff, Unread channels, VC options */
-  --interactive-muted: #4f545c; /* Muted channels, Muted catagories */
-  --background-primary: #36393f; /* Main channel chat area, Top bar, And the right side of settings */
-  --background-secondary: #2f3136; /* Chanels / Members bar, Left side of Settings */
-  --background-secondary-alt: #292b2f; /* User Ara box, some stuff in settings */
-  --background-tertiary: #202225; /* Window bar, Server list bar, Search date options, Active options in Settings */
-  --background-accent: #4f545c; /* New unreads, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
-  --background-floating: #18191c; /* Tooltips and Server context menu */
-  --background-mobile-primary: #36393f; /* idk what this does */
-  --background-mobile-secondary: #2f3136; /* idk what this does */
-  --background-modifier-hover: rgba(79,84,92,0.16); /* Background when hovering over Channels, Users, and Buttons, etc... */
-  --background-modifier-active: rgba(79,84,92,0.24); /* Background when Clicking the stuff above */
-  --background-modifier-selected: rgba(79,84,92,0.32); /* Background when the stuff above is selected */
-  --background-modifier-accent: hsla(0,0%,100%,0.06); /* Small thin dividers in Code blocks, Settings, etc... */
-  --scrollbar-thin-thumb: #202225; /* The movable part of the Scrollerbar in Context menus */
-  --scrollbar-thin-track: transparent; /* The Scrollerbar track for the above */
-  --scrollbar-auto-thumb: #202225; /* The movable part of the Scrollerbar in chat */
-  --scrollbar-auto-track: #2e3338; /* The Scrollerbar track for the above */
-  --focus-primary: #00b0f4; /* Glowy border? around some minor stuff in settings */
+
+html.theme-dark {
+    --header-primary: #fff;
+    /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
+    --header-secondary: #b9bbbe;
+    /* Secondary text stuff like channel desc, white text in code blocks, etc... */
+    --text-normal: #dcddde;
+    /* Chat, Home icon at the top left, "... is typing", etc... */
+    --text-muted: #72767d;
+    /* "Discord" in the Window bar, the "#,book,speaker, etc..." icons before channels, time stamps, etc.. */
+    --text-link: #008ae6;
+    /* Links, and text inside embeds */
+    --channels-default: #8e9297;
+    /* Read channels, Category names, setting's catagories */
+    --interactive-normal: #b9bbbe;
+    /* the "+" in chat area, and a lot of other icons, Settings  */
+    --interactive-hover: #dcddde;
+    /* Same as above but on hover */
+    --interactive-active: #fff;
+    /* Activated stuff, Unread channels, VC options */
+    --interactive-muted: #4f545c;
+    /* Muted channels, Muted catagories */
+    --background-primary: rgba(24, 28, 37, 1);
+    /* Main channel chat area, Top bar, And the right side of settings */
+    --background-secondary: rgba(20, 23, 31, 1);
+    /* Channels / Members bar, Left side of Settings */
+    --background-secondary-alt: rgba(12, 14, 19, 1);
+    /* User Ara box, some stuff in settings, etc */
+    --background-tertiary: var(--background-secondary-alt);
+    /* Window bar, Server list bar, Search date options, Active options in Settings */
+    --background-accent: var(--background-secondary);
+    /* New unread, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
+    --background-floating: var(--background-secondary-alt);
+    /* Tooltips and Server context menu */
+    --background-mobile-primary: var(--background-primary);
+    /* Something something Login menu */
+    --background-mobile-secondary: var(--background-secondary);
+    /* same as above */
+    --channeltextarea-background: var(--background-secondary-alt);
+    /* Chat Box */
+    --background-modifier-hover: rgba(12, 14, 19, 0.16);
+    /* Background when hovering over Channels, Users, and Buttons, etc... */
+    --background-modifier-active: rgba(12, 14, 19, 0.24);
+    /* Background when Clicking the stuff above */
+    --background-modifier-selected: rgba(12, 14, 19, 0.32);
+    /* Background when the stuff above is selected */
+    --background-modifier-accent: hsla(0, 0%, 0%, 0.603);
+    /* Small thin dividers in Code blocks, Settings, between friends, etc... */
+    --scrollbar-thin-thumb: var(--background-secondary-alt);
+    /* The movable part of the Scrollbar in Context menus */
+    --scrollbar-thin-track: transparent;
+    /* The Scrollbar track for the above */
+    --scrollbar-auto-thumb: var(--background-secondary-alt);
+    /* The movable part of the Scrollbar in chat */
+    --scrollbar-auto-track: transparent;
+    /* The Scrollbar track for the above */
+    --focus-primary: var(--text-link);
+    /* Glowy border? around some minor stuff in settings */
+    --primary: rgba(0, 138, 230, 1);
+    /* Main blue accent */
+    --secondary: rgba(0, 230, 130, 1);
+    /* Main green accent (also for "Online" status with better status indicators) */
+    --warning: rgba(230, 130, 0, 1);
+    /* Main yellow accent (also for "Idle" status with better status indicators) */
+    --danger: rgba(230, 15, 15, 1);
+    /* Main red accent (also for "DnD" status with better status indicators) */
+    --streaming: #8a00e6;
+    /* var to be used with Better status indicators */
+    --invisible: #0f0f0f;
+    /* same as above */
+    --gradient1: var(--primary);
+    /* Blue part of the gradient, change this if you don't want it to change the normal blue accent */
+    --gradient2: var(--secondary);
+    /* Same as above */
 }
+
+
+
+/* ################################################################################################################################## */
+                                                             /*** Log-IN Page ***/  
+
+
+/* Log-in box background */
+
+.theme-dark.authBox-hW6HRx {
+    background: var(--background-primary);
+    position: absolute;
+    top: 315px;
+    right: 110px;
+}
+
+
+/* login blurple text */
+
+.lookLink-9FtZy-.colorBrand-3pXr91 {
+    color: var(--primary)
+}
+
+
+/* Line under blurple text */
+
+.lookLink-9FtZy-.colorBrand-3pXr91:hover .contents-18-Yxp {
+    background-image: linear-gradient(0deg, transparent, transparent 1px, #008ae6 0, #008ae6 2px, transparent 0);
+}
+
+
+/* red border when you fail to enter something  */
+
+.input-cIJ7To.error-2O5WFJ {
+    border-color: var(--danger)
+}
+
+
+
+/* ################################################################################################################################## */
+                                                             /*** Home Page ***/                                                              
+
+
+/** Backgrounds **/
+
+.bg-h5JY_x /* Main Discord window*/,
+.nowPlayingScroller-2XrVUt /* "Active Now" background box */,
+.peopleList-3c4jOR /* Friend's list */,
+.scroller-1JbKMe /* DM list */,
+.nowPlayingColumn-2sl4cE /* Right side of the friend's page */,
+.searchBar-6Kv8R2 /* Search bar background box */,
+.platform-win .scroller-1Bvpku /* Server list background */,
+.container-3baos1 /* User avatar box */
+{
+    background-color: var(--background-primary);
+}
+
+.consentCard-1iSxB_ /* "This section could be better" */,
+.itemCard-v9viV7 /* Active friends */,
+.theme-dark .inset-3sAvek /* Box for the above */
+{
+    background-color: var(--background-secondary);
+}
+
+.theme-dark .outer-1AjyKL.interactive-3B9GmY:hover /* Active friends on hover */,
+.theme-dark .outer-1AjyKL.active-1xchHY /* Same as above but active */,
+.section-2gLsgF /* Friend is streaming X */
+{
+    background-color: var(--background-secondary-alt);
+}
+
+/** Small Details **/
+
+/* Removes the separator between friend streaming screen and server because it looks bad when hovered */
+.theme-dark .separator-XqIyoz{display:none;}
+
+
+
+/* ################################################################################################################################## */
+                                                             /*** Home Page ***/ 
