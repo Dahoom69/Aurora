@@ -61,11 +61,11 @@ html.theme-dark {
     /* same as above */
     --channeltextarea-background: var(--background-secondary-alt);
     /* Chat Box */
-    --background-modifier-hover: rgba(12, 14, 19, 0.16);
+    --background-modifier-hover: rgba(12, 14, 19, 0.2);
     /* Background when hovering over Channels, Users, and Buttons, etc... */
-    --background-modifier-active: rgba(12, 14, 19, 0.24);
+    --background-modifier-active: rgba(12, 14, 19, 0.3);
     /* Background when Clicking the stuff above */
-    --background-modifier-selected: rgba(12, 14, 19, 0.32);
+    --background-modifier-selected: rgba(12, 14, 19, 0.4);
     /* Background when the stuff above is selected */
     --background-modifier-accent: hsla(0, 0%, 0%, 0.603);
     /* Small thin dividers in Code blocks, Settings, between friends, etc... */
@@ -136,7 +136,7 @@ html.theme-dark {
 
 
 /* ################################################################################################################################## */
-                                                             /*** Home Page ***/                                                              
+                                                            /*** Home Page ***/                                                              
 
 
 /** Backgrounds **/
@@ -175,4 +175,61 @@ html.theme-dark {
 
 
 /* ################################################################################################################################## */
-                                                             /*** Home Page ***/ 
+                                                          /*** Settings Page ***/ 
+
+
+/** Backgrounds **/
+
+.sidebarRegionScroller-3MXcoP /* Left side */,
+.background-1QDuV2 /* "MY ACCOUNT" box */
+{
+    background-color: var(--background-primary);
+}
+
+.fieldList-21DyL8 /* Personal info box */,
+.cardPrimaryOutline-29Ujqw /* Authorized apps */,
+.accountList-33MS45 /* Connected accounts */,
+.outer-1AjyKL,.cardWrapper-2Min21 /* Recommended servers to boost */,
+.theme-dark .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /* Video setting's camera photo */,
+.cardPrimaryEditable-3KtE4g /* Client's status display [*] */
+{
+    background-color: var(--background-secondary);
+}
+
+.cardPrimary-1Hv-to /* Check out ToS box */,
+.accountBtn-2Nozo3 .accountBtnInner-sj5jLs /* Sites in connected accounts */,
+.theme-dark .gemIndicatorContainer-2jdECl /* Boost level of recommended servers */,
+.theme-dark .notDetected-33MY4s, .theme-light .notDetected-33MY4s /* No game detected */,
+.option-n0icdO /* Overlay options  */
+{
+    background-color: var(--background-secondary-alt);
+}
+
+.disabled-3I9jyo /* The disabled option for Overlay */
+{
+    color: var(--background-secondary-alt);
+}
+
+.item-26Dhrx:hover:not([aria-checked=true]) /* Forces the hover value to be used for sticker animation options, Input mode, etc... */,
+.bsi-settings-card:hover
+{
+    background-color: rgba(12, 14, 19, 0.5) !important;
+}
+
+.item-26Dhrx:active:not([aria-checked=true]) /* Same as above */
+{
+    background-color: rgba(12, 14, 19, 0.7);
+}
+
+/* ################################################################################################################################## */
+                                                           /*** Chat Page ***/ 
+
+
+/** Backgrounds **/
+
+.container-3w7J-x /* Channels bar */,
+.clickable-25tGDB /* Server title above channels */,
+.members-1998pB, .members-1998pB>div /* Role Title, Users bar */
+{
+    background-color: var(--background-primary);
+}
