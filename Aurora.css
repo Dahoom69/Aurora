@@ -17,12 +17,16 @@ Aurora is a Fork of Spectra#7698's Nocturnal theme, with some additions by Rayan
 the purpose of it is to make it work on Powercord and uhh look good I guess? Any feedback is welcome.
 This theme can be used in both Dark and Light modes with Light mode offering a warmer color palette.
 You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
-/* ##################################################################################################################################
+
+FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spectra
+
+/* ################################################################################################################################## */
+                                                             /*** Common stuff ***/  
 
 
 /* Dark Mode Variables */
 
-html.theme-dark {
+.theme-dark {
     --header-primary: #fff;
     /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
     --header-secondary: #b9bbbe;
@@ -99,8 +103,93 @@ html.theme-dark {
 
 
 
+/* Gradient Buttons */
+
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV /* Most buttons in settings */,
+.lookFilled-1Gx00P.colorBrand-3pXr91 /* Change password / View Backup codes */,
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */
+{
+    background-color: var(--background-secondary-alt);
+    border: 1.5px solid var(--primary);
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* When hovered */
+
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover /* Most buttons in settings */,
+.lookFilled-1Gx00P.colorBrand-3pXr91:hover /* Change password / View Backup codes */,
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */
+{
+	color: #fff;
+	border: 1.5px solid transparent;
+	background-color: var(--primary);
+	background-image: linear-gradient(to right,var(--gradient1),var(--gradient2));
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200% 200%
+}
+
+
+
+/* Red Buttons */
+
+.lookOutlined-3sRXeN.colorRed-1TFJan
+{
+    background-color: var(--background-secondary-alt);
+    border: 1.5px solid var(--danger);
+    border-radius: 5px;
+    color: var(--danger);
+}
+
+/* When hovered */
+
+.lookOutlined-3sRXeN.colorRed-1TFJan:hover
+{
+	color: #fff;
+	border: 1.5px solid transparent;
+	background-color: var(--danger);
+	background-image: linear-gradient(to right, rgba(170, 40, 40), var(--danger));
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200% 200%
+}
+
+
+
+/* Big Warning Buttons */
+
+.lookFilled-1Gx00P.colorRed-1TFJan /* Disable Account */,
+.actionRed-gYn8D3 /* NSFW warning "Continue" */
+{
+    background-color: var(--danger);
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* When hovered */
+
+.lookFilled-1Gx00P.colorRed-1TFJan:hover /* Disable Account */,
+.actionRed-gYn8D3:hover /* NSFW warning "Continue" */
+{
+	color: #fff;
+	background-color: var(--danger);
+	background-image: linear-gradient(to left, rgba(150, 10, 10), rgba(200, 15, 15), rgba(150, 10, 10));
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200% 200%
+}
+
+
+
+/** Makes stuff green  **/
+
+.userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg */
+{
+    color: var(--secondary);
+}
 /* ################################################################################################################################## */
-                                                             /*** Log-IN Page ***/  
+                                                             /*** Log-IN page ***/  
 
 
 /* Log-in box background */
@@ -136,7 +225,7 @@ html.theme-dark {
 
 
 /* ################################################################################################################################## */
-                                                            /*** Home Page ***/                                                              
+                                                            /*** Home page: Friends ***/                                                              
 
 
 /** Backgrounds **/
@@ -167,6 +256,8 @@ html.theme-dark {
     background-color: var(--background-secondary-alt);
 }
 
+
+
 /** Small Details **/
 
 /* Removes the separator between friend streaming screen and server because it looks bad when hovered */
@@ -175,7 +266,7 @@ html.theme-dark {
 
 
 /* ################################################################################################################################## */
-                                                          /*** Settings Page ***/ 
+                                                          /*** Settings page ***/ 
 
 
 /** Backgrounds **/
@@ -191,9 +282,11 @@ html.theme-dark {
 .accountList-33MS45 /* Connected accounts */,
 .outer-1AjyKL,.cardWrapper-2Min21 /* Recommended servers to boost */,
 .theme-dark .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /* Video setting's camera photo */,
-.cardPrimaryEditable-3KtE4g /* Client's status display [*] */
+.cardPrimaryEditable-3KtE4g /* Client's status display [*] */,
+.theme-dark .codeRedemptionRedirect-1wVR4b
 {
     background-color: var(--background-secondary);
+    border-color: var(--background-secondary-alt);
 }
 
 .cardPrimary-1Hv-to /* Check out ToS box */,
@@ -221,15 +314,44 @@ html.theme-dark {
     background-color: rgba(12, 14, 19, 0.7);
 }
 
+
+
+/** Small details **/
+
+/* "Remove" text in "My Account" box */
+.theme-dark .lookLink-9FtZy-.colorPrimary-3b3xI6 {
+    color: var(--danger);
+    border-bottom-color: var(--danger);
+}
+.theme-dark .lookLink-9FtZy-.colorPrimary-3b3xI6:hover .contents-18-Yxp{
+    background-image: linear-gradient(0deg,transparent,transparent 1px,var(--danger) 0, var(--danger) 2px,transparent 0);
+}
+
+
 /* ################################################################################################################################## */
-                                                           /*** Chat Page ***/ 
+                                                           /*** Chat page ***/ 
 
 
 /** Backgrounds **/
 
 .container-3w7J-x /* Channels bar */,
 .clickable-25tGDB /* Server title above channels */,
-.members-1998pB, .members-1998pB>div /* Role Title, Users bar */
+.members-1998pB, .members-1998pB>div /* Role Title, Users bar */,
+.container-1giJp5 /* VC connected box */,
+.container-1r6BKw.transparent-2ZlE3R /* Top bar of stream screen */,
+.callContainer-36WRfH /* Stream / Call background */
 {
     background-color: var(--background-primary);
 }
+
+.tileChild-31WXi8 /* Stream has ended */ /* .button-3HqqDX (button for later), .participantsButton-KYW-IW (Hide participants for later) */
+{
+    background-color: var(--background-secondary);
+}
+
+
+
+/** Small details **/
+
+
+
