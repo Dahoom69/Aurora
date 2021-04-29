@@ -71,8 +71,8 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
     /* Background when Clicking the stuff above */
     --background-modifier-selected: rgba(12, 14, 19, 0.4);
     /* Background when the stuff above is selected */
-    --background-modifier-accent: hsla(0, 0%, 0%, 0.603);
-    /* Small thin dividers in Code blocks, Settings, between friends, etc... */
+    --background-modifier-accent: hsla(0, 0%, 0%, 0.301);
+    /* Small thin dividers in Code blocks, Settings, between friends, unpicked reactions etc... */
     --scrollbar-thin-thumb: var(--background-secondary-alt);
     /* The movable part of the Scrollbar in Context menus */
     --scrollbar-thin-track: transparent;
@@ -107,7 +107,8 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91 /* Change password / View Backup codes */,
-.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */,
+.theme-dark .watchButton-2SbJEo /* Watch Stream */
 {
     background-color: var(--background-secondary-alt);
     border: 1.5px solid var(--primary);
@@ -119,7 +120,9 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91:hover /* Change password / View Backup codes */,
-.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */,
+.theme-dark .watchButton-2SbJEo:not([disabled]):hover /* Watch Stream */,
+.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request" */
 {
 	color: #fff;
 	border: 1.5px solid transparent;
@@ -184,7 +187,8 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 
 /** Makes stuff green  **/
 
-.userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg */
+.userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg */,
+.inline-136HKr .pro-1T8RK7 /* "PROTIP" under "Watch Stream" */
 {
     color: var(--secondary);
 }
@@ -339,19 +343,67 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 .members-1998pB, .members-1998pB>div /* Role Title, Users bar */,
 .container-1giJp5 /* VC connected box */,
 .container-1r6BKw.transparent-2ZlE3R /* Top bar of stream screen */,
-.callContainer-36WRfH /* Stream / Call background */
+.callContainer-36WRfH /* Stream / Call background */,
+.modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */,
+.activityPanel-28dQGo /* Game you're playing */
 {
     background-color: var(--background-primary);
 }
 
-.tileChild-31WXi8 /* Stream has ended */ /* .button-3HqqDX (button for later), .participantsButton-KYW-IW (Hide participants for later) */
+.tileChild-31WXi8 /* Stream has ended */,
+.body-Ogsp8i /* Watch Stream */,
+.button-3HqqDX /* Stream UI button */, 
+.participantsButton-KYW-IW /* Hide participants */,
+.theme-dark .footer-2gL1pp /* Bottom part of "HOLD UP this link will take you to..." */,
+.topSectionNormal-2-vo2m, .body-3ND3kc /* User profile Top, Bottom */
 {
     background-color: var(--background-secondary);
 }
 
+.participantsButton-KYW-IW:hover /* Hide participants Hover */
+{
+    background-color: var(--background-secondary-alt);
+}
 
 
 /** Small details **/
 
+.theme-dark .previewHover-1tGzfF, .theme-dark .previewHover-1tGzfF /* Watch stream */
+{
+    background: rgba(20, 23, 31, 0.3);
+}
 
+/* Moon replacing Home icon */
+.wrapper-1BJsBx[aria-label=Home] .childWrapper-anI2G9 {
+	display: none
+}
+.wrapper-1BJsBx[aria-label=Home] {
+	transition: all .3s ease;
+	background-image: linear-gradient(to left,var(--gradient1),var(--gradient2));
+	-webkit-mask-image: url(https://i.imgur.com/lYXFpXr.png) !important;
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: contain
+}
 
+/* Removes box shadows */
+.theme-dark .footer-2gL1pp
+{
+    box-shadow: none;
+}
+
+/* Removes borders */
+.tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */
+{
+    border:none
+}
+
+/* Reactions */
+.reaction-1hd86g.reactionMe-wv5HKu
+{
+    background-color: rgba(0, 138, 230, .25);
+}
+.reactionMe-wv5HKu .reactionCount-2mvXRV, .reactionMe-wv5HKu:hover .reactionCount-2mvXRV
+{
+    color: var(--primary);
+}
