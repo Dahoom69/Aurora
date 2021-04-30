@@ -18,219 +18,225 @@ the purpose of it is to make it work on Powercord and uhh look good I guess? Any
 This theme can be used in both Dark and Light modes with Light mode offering a warmer color palette.
 You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
 
-FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spectra
+FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken from Spectra (obv changed a bit to fit powercord / be better)
 
 /* ################################################################################################################################## */
-                                                             /*** Common stuff ***/  
-
+/*** Common stuff ***/
 
 /* Dark Mode Variables */
 
 .theme-dark {
-    --header-primary: #fff;
-    /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
-    --header-secondary: #b9bbbe;
-    /* Secondary text stuff like channel desc, white text in code blocks, etc... */
-    --text-normal: #dcddde;
-    /* Chat, Home icon at the top left, "... is typing", etc... */
-    --text-muted: #72767d;
-    /* "Discord" in the Window bar, the "#,book,speaker, etc..." icons before channels, time stamps, etc.. */
-    --text-link: #008ae6;
-    /* Links, and text inside embeds */
-    --channels-default: #8e9297;
-    /* Read channels, Category names, setting's catagories */
-    --interactive-normal: #b9bbbe;
-    /* the "+" in chat area, and a lot of other icons, Settings  */
-    --interactive-hover: #dcddde;
-    /* Same as above but on hover */
-    --interactive-active: #fff;
-    /* Activated stuff, Unread channels, VC options */
-    --interactive-muted: #4f545c;
-    /* Muted channels, Muted catagories */
-    --background-primary: rgba(24, 28, 37, 1);
-    /* Main channel chat area, Top bar, And the right side of settings */
-    --background-secondary: rgba(20, 23, 31, 1);
-    /* Channels / Members bar, Left side of Settings */
-    --background-secondary-alt: rgba(12, 14, 19, 1);
-    /* User Ara box, some stuff in settings, etc */
-    --background-tertiary: var(--background-secondary-alt);
-    /* Window bar, Server list bar, Search date options, Active options in Settings */
-    --background-accent: var(--background-secondary);
-    /* New unread, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
-    --background-floating: var(--background-secondary-alt);
-    /* Tooltips and Server context menu */
-    --background-mobile-primary: var(--background-primary);
-    /* Something something Login menu */
-    --background-mobile-secondary: var(--background-secondary);
-    /* same as above */
-    --channeltextarea-background: var(--background-secondary-alt);
-    /* Chat Box */
-    --background-modifier-hover: rgba(12, 14, 19, 0.2);
-    /* Background when hovering over Channels, Users, and Buttons, etc... */
-    --background-modifier-active: rgba(12, 14, 19, 0.3);
-    /* Background when Clicking the stuff above */
-    --background-modifier-selected: rgba(12, 14, 19, 0.4);
-    /* Background when the stuff above is selected */
-    --background-modifier-accent: hsla(0, 0%, 0%, 0.301);
-    /* Small thin dividers in Code blocks, Settings, between friends, unpicked reactions etc... */
-    --scrollbar-thin-thumb: var(--background-secondary-alt);
-    /* The movable part of the Scrollbar in Context menus */
-    --scrollbar-thin-track: transparent;
-    /* The Scrollbar track for the above */
-    --scrollbar-auto-thumb: var(--background-secondary-alt);
-    /* The movable part of the Scrollbar in chat */
-    --scrollbar-auto-track: transparent;
-    /* The Scrollbar track for the above */
-    --focus-primary: var(--text-link);
-    /* Glowy border? around some minor stuff in settings */
-    --primary: rgba(0, 138, 230, 1);
-    /* Main blue accent */
-    --secondary: rgba(0, 230, 130, 1);
-    /* Main green accent (also for "Online" status with better status indicators) */
-    --warning: rgba(230, 130, 0, 1);
-    /* Main yellow accent (also for "Idle" status with better status indicators) */
-    --danger: rgba(230, 15, 15, 1);
-    /* Main red accent (also for "DnD" status with better status indicators) */
-    --streaming: #8a00e6;
-    /* var to be used with Better status indicators */
-    --invisible: #0f0f0f;
-    /* same as above */
-    --gradient1: var(--primary);
-    /* Blue part of the gradient, change this if you don't want it to change the normal blue accent */
-    --gradient2: var(--secondary);
-    /* Same as above */
+  --header-primary: #fff;
+  /* Main text like Server name, Channel name in Top bar, and the dots to the side of servers */
+  --header-secondary: #b9bbbe;
+  /* Secondary text stuff like channel desc, white text in code blocks, etc... */
+  --text-normal: #dcddde;
+  /* Chat, Home icon at the top left, "... is typing", etc... */
+  --text-muted: #72767d;
+  /* "Discord" in the Window bar, the "#,book,speaker, etc..." icons before channels, time stamps, etc.. */
+  --text-link: #008ae6;
+  /* Links, and text inside embeds */
+  --channels-default: #8e9297;
+  /* Read channels, Category names, setting's catagories */
+  --interactive-normal: #b9bbbe;
+  /* the "+" in chat area, and a lot of other icons, Settings  */
+  --interactive-hover: #dcddde;
+  /* Same as above but on hover */
+  --interactive-active: #fff;
+  /* Activated stuff, Unread channels, VC options */
+  --interactive-muted: #4f545c;
+  /* Muted channels, Muted catagories */
+  --background-primary: rgba(24, 28, 37, 1);
+  /* Main channel chat area, Top bar, And the right side of settings */
+  --background-primary-alt: rgba(20, 23, 31, 1);
+  /* Slightly darker than background-primary, will mostly be used for highlighted stuff */
+  --background-secondary: rgb(18, 22, 29);
+  /* Channels / Members bar, Left side of Settings */
+  --background-secondary-alt: rgba(12, 14, 19, 1);
+  /* User Ara box, some stuff in settings, etc */
+  --background-tertiary: var(--background-secondary-alt);
+  /* Window bar, Server list bar, Search date options, Active options in Settings */
+  --background-accent: var(--background-mobile-primary);
+  /* New unread, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
+  --background-floating: var(--background-secondary-alt);
+  /* Tooltips and Server context menu */
+  --background-mobile-primary: var(--background-primary);
+  /* Something something Login menu */
+  --background-mobile-secondary: var(--background-primary-alt);
+  /* same as above */
+  --channeltextarea-background: var(--background-secondary-alt);
+  /* Chat Box */
+  --background-modifier-hover: rgba(12, 14, 19, 0.2);
+  /* Background when hovering over Channels, Users, and Buttons, etc... */
+  --background-modifier-active: rgba(12, 14, 19, 0.3);
+  /* Background when Clicking the stuff above */
+  --background-modifier-selected: rgba(12, 14, 19, 0.4);
+  /* Background when the stuff above is selected */
+  --background-modifier-accent: hsla(0, 0%, 0%, 0.301);
+  /* Small thin dividers in Code blocks, Settings, between friends, unpicked reactions etc... */
+  --scrollbar-thin-thumb: var(--background-secondary-alt);
+  /* The movable part of the Scrollbar in Context menus */
+  --scrollbar-thin-track: transparent;
+  /* The Scrollbar track for the above */
+  --scrollbar-auto-thumb: var(--background-secondary-alt);
+  /* The movable part of the Scrollbar in chat */
+  --scrollbar-auto-track: transparent;
+  /* The Scrollbar track for the above */
+  --focus-primary: var(--text-link);
+  /* Glowy border? around some minor stuff in settings */
+  --primary: rgba(0, 138, 230, 1);
+  /* Main blue accent */
+  --secondary: rgba(0, 230, 130, 1);
+  /* Main green accent (also for "Online" status with better status indicators) */
+  --warning: rgba(230, 130, 0, 1);
+  /* Main yellow accent (also for "Idle" status with better status indicators) */
+  --danger: rgba(230, 15, 15, 1);
+  /* Main red accent (also for "DnD" status with better status indicators) */
+  --streaming: #8a00e6;
+  /* var to be used with Better status indicators */
+  --invisible: #0f0f0f;
+  /* same as above */
+  --gradient1: var(--primary);
+  /* Blue part of the gradient, change this if you don't want it to change the normal blue accent */
+  --gradient2: var(--secondary);
+  /* Same as above */
 }
 
-
-
-/* Gradient Buttons */
+/* Gradient Buttons (*) */
 
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91 /* Change password / View Backup codes */,
 .theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */,
-.theme-dark .watchButton-2SbJEo /* Watch Stream */
-{
-    background-color: var(--background-secondary-alt);
-    border: 1.5px solid var(--primary);
-    border-radius: 5px;
-    color: #fff;
+.theme-dark .watchButton-2SbJEo /* Watch Stream */,
+.button-3HqqDX /* Close stream */{
+  background-color: var(--background-secondary);
+  border: 1.5px solid var(--primary);
+  border-radius: 5px;
+  color: #fff;
 }
 
-/* When hovered */
+/* When hovered (*) */
 
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91:hover /* Change password / View Backup codes */,
 .theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */,
 .theme-dark .watchButton-2SbJEo:not([disabled]):hover /* Watch Stream */,
-.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request" */
+.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request" */,
+.button-3HqqDX:hover /* Close stream */
 {
-	color: #fff;
-	border: 1.5px solid transparent;
-	background-color: var(--primary);
-	background-image: linear-gradient(to right,var(--gradient1),var(--gradient2));
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 200% 200%
+  color: #fff;
+  border: 1.5px solid transparent;
+  background-color: var(--primary);
+  background-image: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
 }
-
-
 
 /* Red Buttons */
-
-.lookOutlined-3sRXeN.colorRed-1TFJan
-{
-    background-color: var(--background-secondary-alt);
-    border: 1.5px solid var(--danger);
-    border-radius: 5px;
-    color: var(--danger);
+.lookOutlined-3sRXeN.colorRed-1TFJan {
+  background-color: var(--background-secondary);
+  border: 1.5px solid var(--danger);
+  border-radius: 5px;
+  color: var(--danger);
 }
 
 /* When hovered */
-
-.lookOutlined-3sRXeN.colorRed-1TFJan:hover
-{
-	color: #fff;
-	border: 1.5px solid transparent;
-	background-color: var(--danger);
-	background-image: linear-gradient(to right, rgba(170, 40, 40), var(--danger));
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 200% 200%
+.lookOutlined-3sRXeN.colorRed-1TFJan:hover {
+  color: #fff;
+  border: 1.5px solid transparent;
+  background-color: var(--danger);
+  background-image: linear-gradient(to right, rgba(170, 40, 40), var(--danger));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
 }
-
-
 
 /* Big Warning Buttons */
-
 .lookFilled-1Gx00P.colorRed-1TFJan /* Disable Account */,
-.actionRed-gYn8D3 /* NSFW warning "Continue" */
-{
-    background-color: var(--danger);
-    border-radius: 5px;
-    color: #fff;
+.actionRed-gYn8D3 /* NSFW warning "Continue" */ {
+  background-color: var(--danger);
+  border-radius: 5px;
+  color: #fff;
 }
 
 /* When hovered */
-
 .lookFilled-1Gx00P.colorRed-1TFJan:hover /* Disable Account */,
-.actionRed-gYn8D3:hover /* NSFW warning "Continue" */
-{
-	color: #fff;
-	background-color: var(--danger);
-	background-image: linear-gradient(to left, rgba(150, 10, 10), rgba(200, 15, 15), rgba(150, 10, 10));
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 200% 200%
+.actionRed-gYn8D3:hover /* NSFW warning "Continue" */ {
+  color: #fff;
+  background-color: var(--danger);
+  background-image: linear-gradient(
+    to left,
+    rgba(150, 10, 10),
+    rgba(200, 15, 15),
+    rgba(150, 10, 10)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
 }
-
-
 
 /** Makes stuff green  **/
 
 .userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg */,
-.inline-136HKr .pro-1T8RK7 /* "PROTIP" under "Watch Stream" */
-{
-    color: var(--secondary);
+.inline-136HKr .pro-1T8RK7 /* "PROTIP" under "Watch Stream" */,
+.pro-1T8RK7 .base-1x0h_U .size12-3cLvbJ {
+  color: var(--secondary);
+}
+.updateIconForeground-3tnNZn /* "Update Ready!" */ {
+  fill: var(--secondary);
+}
+
+/* Makes stuff blue */
+
+.iconBadge-qZ4Ksk /* Pin mark*/,
+.wanderingCubesItem-WPXqao /* the spinning blurple block when loading */,
+.unread-1xRYoj /* "NEW UNREADS" */ {
+  background-color: var(--primary);
 }
 /* ################################################################################################################################## */
-                                                             /*** Log-IN page ***/  
-
+/*** Log-IN page ***/
 
 /* Log-in box background */
 
 .theme-dark.authBox-hW6HRx {
-    background: var(--background-primary);
-    position: absolute;
-    top: 315px;
-    right: 110px;
+  background: var(--background-primary);
+  position: absolute;
+  top: 315px;
+  right: 110px;
 }
-
 
 /* login blurple text */
 
 .lookLink-9FtZy-.colorBrand-3pXr91 {
-    color: var(--primary)
+  color: var(--primary);
 }
-
 
 /* Line under blurple text */
 
 .lookLink-9FtZy-.colorBrand-3pXr91:hover .contents-18-Yxp {
-    background-image: linear-gradient(0deg, transparent, transparent 1px, #008ae6 0, #008ae6 2px, transparent 0);
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    #008ae6 0,
+    #008ae6 2px,
+    transparent 0
+  );
 }
-
 
 /* red border when you fail to enter something  */
 
 .input-cIJ7To.error-2O5WFJ {
-    border-color: var(--danger)
+  border-color: var(--danger);
 }
 
-
-
 /* ################################################################################################################################## */
-                                                            /*** Home page: Friends ***/                                                              
-
+/*** Home page: Friends ***/
 
 /** Backgrounds **/
 
@@ -241,44 +247,40 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 .nowPlayingColumn-2sl4cE /* Right side of the friend's page */,
 .searchBar-6Kv8R2 /* Search bar background box */,
 .platform-win .scroller-1Bvpku /* Server list background */,
-.container-3baos1 /* User avatar box */
-{
-    background-color: var(--background-primary);
+.container-3baos1 /* User avatar box */ {
+  background-color: var(--background-primary);
 }
 
 .consentCard-1iSxB_ /* "This section could be better" */,
 .itemCard-v9viV7 /* Active friends */,
-.theme-dark .inset-3sAvek /* Box for the above */
-{
-    background-color: var(--background-secondary);
+.theme-dark .inset-3sAvek /* Box for the above */ {
+  background-color: var(--background-primary-alt);
 }
 
 .theme-dark .outer-1AjyKL.interactive-3B9GmY:hover /* Active friends on hover */,
 .theme-dark .outer-1AjyKL.active-1xchHY /* Same as above but active */,
-.section-2gLsgF /* Friend is streaming X */
-{
-    background-color: var(--background-secondary-alt);
+.section-2gLsgF /* Friend is streaming X */,
+.previewImage-RxVzkZ /* Stream Preview background */{
+  background-color: var(--background-primary-alt);
 }
-
-
 
 /** Small Details **/
 
 /* Removes the separator between friend streaming screen and server because it looks bad when hovered */
-.theme-dark .separator-XqIyoz{display:none;}
-
-
+.theme-dark .separator-XqIyoz {
+  display: none;
+}
 
 /* ################################################################################################################################## */
-                                                          /*** Settings page ***/ 
-
+/*** Settings page ***/
 
 /** Backgrounds **/
 
 .sidebarRegionScroller-3MXcoP /* Left side */,
-.background-1QDuV2 /* "MY ACCOUNT" box */
-{
-    background-color: var(--background-primary);
+.background-1QDuV2 /* "MY ACCOUNT" box */,
+.header-1TKi98 /* Leave 'Group DM' */,
+.content-mK72R6 /* Text under the above */ {
+  background-color: var(--background-primary);
 }
 
 .fieldList-21DyL8 /* Personal info box */,
@@ -287,54 +289,52 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 .outer-1AjyKL,.cardWrapper-2Min21 /* Recommended servers to boost */,
 .theme-dark .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /* Video setting's camera photo */,
 .cardPrimaryEditable-3KtE4g /* Client's status display [*] */,
-.theme-dark .codeRedemptionRedirect-1wVR4b
-{
-    background-color: var(--background-secondary);
-    border-color: var(--background-secondary-alt);
+.theme-dark .codeRedemptionRedirect-1wVR4b {
+  background-color: var(--background-primary-alt);
+  border-color: var(--background-secondary-alt);
 }
 
 .cardPrimary-1Hv-to /* Check out ToS box */,
 .accountBtn-2Nozo3 .accountBtnInner-sj5jLs /* Sites in connected accounts */,
 .theme-dark .gemIndicatorContainer-2jdECl /* Boost level of recommended servers */,
 .theme-dark .notDetected-33MY4s, .theme-light .notDetected-33MY4s /* No game detected */,
-.option-n0icdO /* Overlay options  */
-{
-    background-color: var(--background-secondary-alt);
+.option-n0icdO /* Overlay options  */ {
+  background-color: var(--background-secondary-alt);
 }
 
-.disabled-3I9jyo /* The disabled option for Overlay */
-{
-    color: var(--background-secondary-alt);
+.disabled-3I9jyo /* The disabled option for Overlay */ {
+  color: var(--background-secondary-alt);
 }
 
 .item-26Dhrx:hover:not([aria-checked=true]) /* Forces the hover value to be used for sticker animation options, Input mode, etc... */,
-.bsi-settings-card:hover
-{
-    background-color: rgba(12, 14, 19, 0.5) !important;
+.bsi-settings-card:hover {
+  background-color: rgba(12, 14, 19, 0.5) !important;
 }
 
-.item-26Dhrx:active:not([aria-checked=true]) /* Same as above */
-{
-    background-color: rgba(12, 14, 19, 0.7);
+.item-26Dhrx:active:not([aria-checked=true]) /* Same as above */ {
+  background-color: rgba(12, 14, 19, 0.7);
 }
-
-
 
 /** Small details **/
 
 /* "Remove" text in "My Account" box */
 .theme-dark .lookLink-9FtZy-.colorPrimary-3b3xI6 {
-    color: var(--danger);
-    border-bottom-color: var(--danger);
+  color: var(--danger);
+  border-bottom-color: var(--danger);
 }
-.theme-dark .lookLink-9FtZy-.colorPrimary-3b3xI6:hover .contents-18-Yxp{
-    background-image: linear-gradient(0deg,transparent,transparent 1px,var(--danger) 0, var(--danger) 2px,transparent 0);
+.theme-dark .lookLink-9FtZy-.colorPrimary-3b3xI6:hover .contents-18-Yxp {
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    var(--danger) 0,
+    var(--danger) 2px,
+    transparent 0
+  );
 }
-
 
 /* ################################################################################################################################## */
-                                                           /*** Chat page ***/ 
-
+/*** Chat page ***/
 
 /** Backgrounds **/
 
@@ -345,65 +345,138 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are code made by Spec
 .container-1r6BKw.transparent-2ZlE3R /* Top bar of stream screen */,
 .callContainer-36WRfH /* Stream / Call background */,
 .modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */,
-.activityPanel-28dQGo /* Game you're playing */
-{
-    background-color: var(--background-primary);
+.activityPanel-28dQGo /* Game you're playing */ {
+  background-color: var(--background-primary);
 }
-
 .tileChild-31WXi8 /* Stream has ended */,
 .body-Ogsp8i /* Watch Stream */,
 .button-3HqqDX /* Stream UI button */, 
 .participantsButton-KYW-IW /* Hide participants */,
-.theme-dark .footer-2gL1pp /* Bottom part of "HOLD UP this link will take you to..." */,
-.topSectionNormal-2-vo2m, .body-3ND3kc /* User profile Top, Bottom */
+.topSectionNormal-2-vo2m, .body-3ND3kc /* User profile Top, Bottom */,
+.pictureInPictureVideo-2iKsGg /* Stream has ended */,
+.wrapper-1wyZBN, .spinner-2UBgbJ /* Loading Stream */
 {
-    background-color: var(--background-secondary);
+  background-color: var(--background-primary-alt);
 }
-
-.participantsButton-KYW-IW:hover /* Hide participants Hover */
+.theme-dark .footer-2gL1pp /* Bottom part of "HOLD UP this link will take you to..." */
 {
-    background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary);
 }
-
+.participantsButton-KYW-IW:hover /* Hide participants Hover */ {
+  background-color: var(--background-secondary-alt);
+}
 
 /** Small details **/
 
-.theme-dark .previewHover-1tGzfF, .theme-dark .previewHover-1tGzfF /* Watch stream */
-{
-    background: rgba(20, 23, 31, 0.3);
+.theme-dark .previewHover-1tGzfF, .theme-dark .previewHover-1tGzfF /* Watch stream the top part*/ {
+  background: rgba(20, 23, 31, 0.3);
 }
 
-/* Moon replacing Home icon */
-.wrapper-1BJsBx[aria-label=Home] .childWrapper-anI2G9 {
-	display: none
+/* Crescent Moon replacing Home icon */
+.wrapper-1BJsBx[aria-label="Home"] .childWrapper-anI2G9 {
+  display: none;
 }
-.wrapper-1BJsBx[aria-label=Home] {
-	transition: all .3s ease;
-	background-image: linear-gradient(to left,var(--gradient1),var(--gradient2));
-	-webkit-mask-image: url(https://i.imgur.com/lYXFpXr.png) !important;
-	-webkit-mask-position: center;
-	-webkit-mask-repeat: no-repeat;
-	-webkit-mask-size: contain
+.wrapper-1BJsBx[aria-label="Home"] {
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to left,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  -webkit-mask-image: url(https://i.imgur.com/lYXFpXr.png) !important;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
 }
 
 /* Removes box shadows */
-.theme-dark .footer-2gL1pp
-{
-    box-shadow: none;
+.theme-dark .footer-2gL1pp /* Upload box */ {
+  box-shadow: none;
 }
 
 /* Removes borders */
-.tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */
-{
-    border:none
+.tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */ {
+  border: none;
 }
 
 /* Reactions */
-.reaction-1hd86g.reactionMe-wv5HKu
-{
-    background-color: rgba(0, 138, 230, .25);
+.reaction-1hd86g.reactionMe-wv5HKu {
+  background-color: rgba(0, 138, 230, 0.25);
 }
-.reactionMe-wv5HKu .reactionCount-2mvXRV, .reactionMe-wv5HKu:hover .reactionCount-2mvXRV
-{
-    color: var(--primary);
+/* Above but when you react to something yourself */
+.reactionMe-wv5HKu .reactionCount-2mvXRV,
+.reactionMe-wv5HKu:hover .reactionCount-2mvXRV {
+  color: var(--primary);
+}
+
+/* green box shadow over user stream preview box */
+.theme-dark .streamPreview-2-WUWT{
+    box-shadow: 0px 0px 30px -20px var(--secondary);
+}
+
+
+/* Gradient underline for Guild members list (right side of chat) */
+.container-2Pjhx-:after{
+  content: ""; /* Type something here for a funny */
+  height: 2px; /* How thick the line is */
+  width: 100%; /* How long it is */
+  position: absolute; /* This makes sure the below work */
+  background-image: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2)
+  ); /* The color of the line */
+  transform: translateX(110%); /* Makes the line out of bounds to the */
+  transition: all 0.25s ease; /* Mow fast the line is */
+}
+
+.channel-2QD9_O .container-2Pjhx-:after {
+  transform: translateX(-110%);
+}
+
+.container-2Pjhx-:hover {
+  background-color: var(--background-primary-alt);
+}
+
+.selected-aXhQR6 .container-2Pjhx- {
+  background-color: var(--background-primary-alt);
+}
+
+.container-2Pjhx-:hover:after,
+.selected-aXhQR6 .container-2Pjhx-:after {
+  transform: translateY(0);
+}
+
+/* Left side */
+.content-1x5b-n::after,
+.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  border-radius: 50px;
+  bottom: 0;
+  left: 0px;
+  position: absolute;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  transform: translateX(-250px);
+  transition: all 0.2s ease;
+}
+
+.side-8zPYf6 .themed-OHr7kt.item-PXvHYJ:hover,
+.wrapper-2jXpOf:hover .content-1x5b-n {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after,
+.wrapper-2jXpOf:hover .content-1x5b-n::after {
+  transform: translateX(0);
 }
