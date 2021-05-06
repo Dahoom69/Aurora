@@ -18,8 +18,8 @@ the purpose of it is to make it work on Powercord and uhh look good I guess? Any
 This theme can be used in both Dark and Light modes with Light mode offering a warmer color palette.
 You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
 
-FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken from Spectra (obv changed a bit to fit powercord / be better)
-
+FAQ: stuff with [*] are related to plugins, stuff with {*} are directly taken from Spectra (obv changed a bit to fit powercord / be better)
+stuff with ((!)) are for me to fix later
 /* ################################################################################################################################## */
 /*** Common stuff ***/
 
@@ -46,11 +46,11 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   /* Activated stuff, Unread channels, VC options */
   --interactive-muted: #4f545c;
   /* Muted channels, Muted catagories */
-  --background-primary: rgba(24, 28, 37, 1);
+  --background-primary: rgba(25, 29, 40, 1);
   /* Main channel chat area, Top bar, And the right side of settings */
-  --background-primary-alt: rgba(20, 23, 31, 1);
+  --background-primary-alt: rgba(20, 23, 35, 1);
   /* Slightly darker than background-primary, will mostly be used for highlighted stuff */
-  --background-secondary: rgb(18, 22, 29);
+  --background-secondary: rgba(16, 18, 29, 1);
   /* Channels / Members bar, Left side of Settings */
   --background-secondary-alt: rgba(12, 14, 19, 1);
   /* User Ara box, some stuff in settings, etc */
@@ -65,6 +65,12 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   --background-mobile-secondary: var(--background-primary-alt);
   /* same as above */
   --channeltextarea-background: var(--background-secondary-alt);
+ /* Borders for other stuff */
+  --deprecated-text-input-border:var(--background-secondary);
+  /* Borders for some stuff */
+  --deprecated-text-input-border-hover: var(--background-secondary-alt);
+  /* another thing that's barely used in input settings */
+  --deprecated-text-input-bg: var(--background-primary-alt);
   /* Chat Box */
   --background-modifier-hover: rgba(12, 14, 19, 0.2);
   /* Background when hovering over Channels, Users, and Buttons, etc... */
@@ -84,45 +90,52 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   /* The Scrollbar track for the above */
   --focus-primary: var(--text-link);
   /* Glowy border? around some minor stuff in settings */
-  --primary: rgba(0, 138, 230, 1);
+  --primary: #008ae6;
   /* Main blue accent */
-  --secondary: rgba(0, 230, 130, 1);
+  --secondary: rgba(0, 230, 138, 1);
   /* Main green accent (also for "Online" status with better status indicators) */
-  --warning: rgba(230, 130, 0, 1);
+  --warning: rgba(230, 138, 0, 1);
   /* Main yellow accent (also for "Idle" status with better status indicators) */
-  --danger: rgba(230, 15, 15, 1);
+  --danger: rgba(230, 30, 30, 1);
   /* Main red accent (also for "DnD" status with better status indicators) */
-  --streaming: #8a00e6;
+  --streaming: rgb(138, 0, 230);
   /* var to be used with Better status indicators */
-  --invisible: #0f0f0f;
+  --invisible: rgb(15, 15, 15);
   /* same as above */
   --gradient1: var(--primary);
   /* Blue part of the gradient, change this if you don't want it to change the normal blue accent */
   --gradient2: var(--secondary);
-  /* Same as above */
+  /* Same as above but green*/
 }
 
-/* Gradient Buttons (*) */
-
+/* Gradient Buttons {*} */
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91 /* Change password / View Backup codes */,
 .theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */,
 .theme-dark .watchButton-2SbJEo /* Watch Stream */,
-.button-3HqqDX /* Close stream */{
+.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request", "Enable all" */,
+.button-3HqqDX /* Close stream */,
+.lookFilled-1Gx00P.colorBrand-3pXr91:disabled /* bdCompat disabled buttons */,
+.theme-dark .lookGhost-2Fn_0-.colorGrey-2DXtkV /* "Browse" for one of lighty's plugin [*] */
+{
   background-color: var(--background-secondary);
   border: 1.5px solid var(--primary);
   border-radius: 5px;
   color: #fff;
 }
 
-/* When hovered (*) */
-
+/* When hovered {*} */
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover /* Most buttons in settings */,
 .lookFilled-1Gx00P.colorBrand-3pXr91:hover /* Change password / View Backup codes */,
 .theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */,
 .theme-dark .watchButton-2SbJEo:not([disabled]):hover /* Watch Stream */,
-.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request" */,
-.button-3HqqDX:hover /* Close stream */
+.lookFilled-1Gx00P.colorGreen-29iAKY:hover /* "Send Friend Request", "Enable all" */,
+.button-3HqqDX:hover /* Close stream */,
+.theme-dark .watchButton-2SbJEo:disabled /* "Watching Stream" */,
+.button-1YfofB.buttonColor-7qQbGO.buttonActive-3FrkXp /* " --> Screen" when you already shared your screen */,
+.lookFilled-1Gx00P.colorGreen-29iAKY:disabled /* "Subscribe" */,
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:disabled /* Same as above but gray */,
+.theme-dark .lookGhost-2Fn_0-.colorGrey-2DXtkV:hover /* "Browse" for one of lighty's plugin [*] */
 {
   color: #fff;
   border: 1.5px solid transparent;
@@ -134,40 +147,42 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   );
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 200% 200%;
+  background-size: 111% 111%;
 }
 
 /* Red Buttons */
-.lookOutlined-3sRXeN.colorRed-1TFJan {
+.lookOutlined-3sRXeN.colorRed-1TFJan /* Most red buttons */ {
   background-color: var(--background-secondary);
   border: 1.5px solid var(--danger);
   border-radius: 5px;
-  color: var(--danger);
+  color: #fff;
 }
 
 /* When hovered */
-.lookOutlined-3sRXeN.colorRed-1TFJan:hover {
+.lookOutlined-3sRXeN.colorRed-1TFJan:hover /* Most red buttons */ {
   color: #fff;
   border: 1.5px solid transparent;
   background-color: var(--danger);
-  background-image: linear-gradient(to right, rgba(170, 40, 40), var(--danger));
+  background-image: linear-gradient(to right, rgba(170, 30, 30), var(--danger));
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 200% 200%;
+  background-size: 120% 120%;
 }
 
 /* Big Warning Buttons */
-.lookFilled-1Gx00P.colorRed-1TFJan /* Disable Account */,
+.lookFilled-1Gx00P.colorRed-1TFJan /* "Disable Account" / "Disable all" */,
 .actionRed-gYn8D3 /* NSFW warning "Continue" */ {
-  background-color: var(--danger);
-  border-radius: 5px;
-  color: #fff;
+    background-color: var(--background-secondary-alt);
+    border: 1.5px solid var(--danger);
+    border-radius: 5px;
+    color: var(--danger);
 }
 
 /* When hovered */
 .lookFilled-1Gx00P.colorRed-1TFJan:hover /* Disable Account */,
 .actionRed-gYn8D3:hover /* NSFW warning "Continue" */ {
   color: #fff;
+  border: 1.5px solid transparent;
   background-color: var(--danger);
   background-image: linear-gradient(
     to left,
@@ -177,32 +192,66 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   );
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 200% 200%;
+  background-size: 120% 120%;
 }
 
 /** Makes stuff green  **/
-
-.userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg */,
+.userSettingsSecurity-3IYeMF .isEnabled-24g9qA /* "Two-factor authentication is enabled" */  /* the icon: /assets/b73a63cb14a22dd24f0f8da07b186335.svg ((!)) */,
 .inline-136HKr .pro-1T8RK7 /* "PROTIP" under "Watch Stream" */,
-.pro-1T8RK7 .base-1x0h_U .size12-3cLvbJ {
-  color: var(--secondary);
-}
+.pro-1T8RK7 .base-1x0h_U .size12-3cLvbJ /* i forgot lol */,
+.rtcConnectionStatusConnected-VRZDjy /* RTC connection text */,
+.rtcConnectionQualityFine-2J6i8z .pingForeground-2uAOZ3 /* RTC green icon */,
+.added-2hLRj3, .added-2hLRj3:after /* "New Features" */{
+  color: var(--secondary) !important;
+} 
 .updateIconForeground-3tnNZn /* "Update Ready!" */ {
   fill: var(--secondary);
 }
+.icon-3Oovq9 /* Screen 1 */{
+    background-color: var(--secondary) !important;
+}
 
-/* Makes stuff blue */
-
+/** Makes stuff blue **/
+.radioIconForeground-XwlXQN /* Blurple dot inside a selected plugin */,
+.colorDefault-2K3EoJ .checkbox-3s5GYZ, .colorDefault-2K3EoJ .radioSelection-1HmrQS /* Above but for vc */{
+  color: var(--primary);
+}
 .iconBadge-qZ4Ksk /* Pin mark*/,
 .wanderingCubesItem-WPXqao /* the spinning blurple block when loading */,
-.unread-1xRYoj /* "NEW UNREADS" */ {
+.unread-1xRYoj /* "NEW UNREADS" bubble in channel list */,
+.barFill-23-gu- /* Blurple bar in context menu */,
+.theme-dark .activeButton-rvKcqq,.theme-dark .activeButton-rvKcqq:hover /* current search result page */{
   background-color: var(--primary);
+}
+svg.slider-TkfMQL svg {
+  display: none;
+}
+.container-3auIfb:not([style*="125"]) /* Settings pills */,
+.mediaBarGrabber-1FqnbN, .mediaBarProgress-1xaPtl, .mediaBarProgress-1xaPtl:after, .mediaBarProgress-1xaPtl:before /* Embeded video's blurple bars */ {
+  background-color: var(--primary) !important;
+}
+
+
+/** Makes stuff red **/
+.colorDanger-2qLCe1 /* the red text in the context menu */,
+.fixed-3zCC84 /* "Fixed" pop up*/,
+.colorable-1bkp8v.red-33-Lnk .centerIcon-2G6o-T /* Leave Stream */,
+.slash-33-IMF /* Slash in mute bubble in vc */,
+.strikethrough-1n4ekb /* Slash on mute and deafen icons */ {
+  color: var(--danger) !important ;
+}
+.fixed-3zCC84:after{
+  background-color: var(--danger);
+}
+
+/** Makes stuff yellow **/
+.rtcConnectionQualityAverage-3KV0u- .pingForeground-2uAOZ3:not(:last-child){
+ color: var(--warning);
 }
 /* ################################################################################################################################## */
 /*** Log-IN page ***/
 
 /* Log-in box background */
-
 .theme-dark.authBox-hW6HRx {
   background: var(--background-primary);
   position: absolute;
@@ -211,13 +260,11 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
 }
 
 /* login blurple text */
-
 .lookLink-9FtZy-.colorBrand-3pXr91 {
   color: var(--primary);
 }
 
 /* Line under blurple text */
-
 .lookLink-9FtZy-.colorBrand-3pXr91:hover .contents-18-Yxp {
   background-image: linear-gradient(
     0deg,
@@ -276,23 +323,34 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
 
 /** Backgrounds **/
 
+.appMount-3lHmkl, body /* Discord's farthest background */,
 .sidebarRegionScroller-3MXcoP /* Left side */,
 .background-1QDuV2 /* "MY ACCOUNT" box */,
 .header-1TKi98 /* Leave 'Group DM' */,
-.content-mK72R6 /* Text under the above */ {
+.content-mK72R6 /* Text under the above */,
+.content-1LAB8Z /* "How'd the stream go?" */,
+.searchResultsWrap-3-pOjs /* Search background */,
+.channelName-1JRO3C /* Search headers */,
+.searchHeader-2XoQg7 /* Main search header */ {
   background-color: var(--background-primary);
 }
-
 .fieldList-21DyL8 /* Personal info box */,
 .cardPrimaryOutline-29Ujqw /* Authorized apps */,
 .accountList-33MS45 /* Connected accounts */,
 .outer-1AjyKL,.cardWrapper-2Min21 /* Recommended servers to boost */,
 .theme-dark .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /* Video setting's camera photo */,
 .cardPrimaryEditable-3KtE4g /* Client's status display [*] */,
-.theme-dark .codeRedemptionRedirect-1wVR4b {
+.theme-dark .codeRedemptionRedirect-1wVR4b /* i forgot */ ,
+.message-1Ng5AR /* Search results */,
+.radioBar-bMNUI- /* settings options */,
+.css-gvi9bl-control /* Selected option from a dropdown */ {
   background-color: var(--background-primary-alt);
-  border-color: var(--background-secondary-alt);
 }
+.radioBar-bMNUI-:hover /* settings options */{
+  background-color: var(--background-secondary);
+}
+
+
 
 .cardPrimary-1Hv-to /* Check out ToS box */,
 .accountBtn-2Nozo3 .accountBtnInner-sj5jLs /* Sites in connected accounts */,
@@ -332,6 +390,37 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
     transparent 0
   );
 }
+/* Borders */
+.css-gvi9bl-control:hover /* Selected option from a dropdown */{
+border-color: var(--background-secondary-alt); 
+}
+
+/* Remove useless padding from the account page */
+.contentColumnDefault-1VQkGM{
+  padding: 0px 50px;
+}
+
+/* removes the useless space in the settings side bar {*} */
+.sidebarRegion-VFTUkN{
+  flex-grow: 0;
+  padding-right: 10px;
+}
+
+/* Decreses the empty space for the above */
+.sidebar-CFHs9e{
+  padding: 10px 5px 0px 5px
+}
+
+/* Pushes header settings a bit to the left */
+.header-2RyJ0Y{
+  padding-left: 5px;
+}
+
+/* Pushes the settings names a little bit to the right */
+.side-8zPYf6 .item-PXvHYJ{
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
 
 /* ################################################################################################################################## */
 /*** Chat page ***/
@@ -345,7 +434,14 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
 .container-1r6BKw.transparent-2ZlE3R /* Top bar of stream screen */,
 .callContainer-36WRfH /* Stream / Call background */,
 .modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */,
-.activityPanel-28dQGo /* Game you're playing */ {
+.activityPanel-28dQGo /* Game you're playing */,
+.theme-dark .uploadModal-2ifh8j /* Upload modal (top) */,
+.theme-dark .footer-2gL1pp /* Bottom part of a couple pop ups like "HOLD UP this link will take you to..." */,
+.theme-dark .root-1gCeng /* "What's new" */,
+.theme-dark .modal-yWgWj- /* Notebook [*] */,
+.header-ykumBX /* Pins header */,
+.messagesPopoutWrap-1MQ1bW /* Pins pop out */,
+.video-8eMOth /*embeded videos*/ {
   background-color: var(--background-primary);
 }
 .tileChild-31WXi8 /* Stream has ended */,
@@ -354,21 +450,36 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
 .participantsButton-KYW-IW /* Hide participants */,
 .topSectionNormal-2-vo2m, .body-3ND3kc /* User profile Top, Bottom */,
 .pictureInPictureVideo-2iKsGg /* Stream has ended */,
-.wrapper-1wyZBN, .spinner-2UBgbJ /* Loading Stream */
+.wrapper-1wyZBN, .spinner-2UBgbJ /* Loading Stream */,
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6 /* Bottom part of user pop out */,
+.theme-dark .footer-3mqk7D /* Upload modal (bot) */,
+.cta-3gK0Pu /* "Watch Stream" for other users in vc*/,
+.colorable-1bkp8v.primaryDark-3mSFDl /* Share Screen / Turn on camera */,
+.messageGroupWrapper-o-Zw7G /* Pinned messages */,
+.colorable-1bkp8v.white-3GPOIp /* Mute bubble in vc */, 
+.colorable-1bkp8v.red-33-Lnk /* Leave stream bubble */,
+.colorable-1bkp8v.primaryDark-3mSFDl.active-1QRrIS /* Camera ^ bubble in VC */,
+.colorable-1bkp8v.white-3GPOIp.active-1QRrIS /* Input device ^ bubble in VC */,
+.scroller-3BxosC /* VC  context menus */
 {
   background-color: var(--background-primary-alt);
 }
-.theme-dark .footer-2gL1pp /* Bottom part of "HOLD UP this link will take you to..." */
+.theme-dark .headerNormal-T_seeN /* Top part of user pop out */,
+.cta-3gK0Pu:hover /* "Watch Stream" for other users in vc*/,
+.participantsButton-KYW-IW:hover /* Hide participants Hover */,
+.colorable-1bkp8v.primaryDark-3mSFDl:hover /* Share Screen / Turn on camera */,
+.colorable-1bkp8v.white-3GPOIp:hover /* Mute bubble in vc */, 
+.colorable-1bkp8v.red-33-Lnk:hover /* Leave stream bubble */
 {
   background-color: var(--background-secondary);
 }
-.participantsButton-KYW-IW:hover /* Hide participants Hover */ {
+/* {
   background-color: var(--background-secondary-alt);
 }
 
 /** Small details **/
 
-.theme-dark .previewHover-1tGzfF, .theme-dark .previewHover-1tGzfF /* Watch stream the top part*/ {
+.theme-dark .previewHover-1tGzfF, .theme-dark .previewHover-1tGzfF /* Watch stream the top overlay*/ {
   background: rgba(20, 23, 31, 0.3);
 }
 
@@ -409,51 +520,47 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
   color: var(--primary);
 }
 
-/* green box shadow over user stream preview box */
-.theme-dark .streamPreview-2-WUWT{
-    box-shadow: 0px 0px 30px -20px var(--secondary);
+/* green box shadows */
+.theme-dark .streamPreview-2-WUWT /* User stream preview popup */,
+.userPopout-3XzG_A /* User popup */ {
+    box-shadow: 0px 0px 5px 0px var(--secondary);
 }
-
 
 /* Gradient underline for Guild members list (right side of chat) */
 .container-2Pjhx-:after{
   content: ""; /* Type something here for a funny */
   height: 2px; /* How thick the line is */
   width: 100%; /* How long it is */
+  border-radius: 0px 0px 4px 4px; /* Round edges */
   position: absolute; /* This makes sure the below work */
   background-image: linear-gradient(
     to right,
     var(--gradient1),
     var(--gradient2)
   ); /* The color of the line */
-  transform: translateX(110%); /* Makes the line out of bounds to the */
+  transform: translateX(110%); /* Makes the line out of bounds to the right */
   transition: all 0.25s ease; /* Mow fast the line is */
 }
-
 .channel-2QD9_O .container-2Pjhx-:after {
   transform: translateX(-110%);
 }
-
 .container-2Pjhx-:hover {
   background-color: var(--background-primary-alt);
 }
-
 .selected-aXhQR6 .container-2Pjhx- {
   background-color: var(--background-primary-alt);
 }
-
 .container-2Pjhx-:hover:after,
 .selected-aXhQR6 .container-2Pjhx-:after {
   transform: translateY(0);
 }
-
 /* Left side */
 .content-1x5b-n::after,
 .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after {
   content: "";
   height: 2px;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 0px 0px 3px 3px;
   bottom: 0;
   left: 0px;
   position: absolute;
@@ -464,19 +571,79 @@ FAQ: stuff with [*] are related to plugins, stuff with (*) are directly taken fr
     var(--gradient2)
   );
   transform: translateX(-250px);
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
-
 .side-8zPYf6 .themed-OHr7kt.item-PXvHYJ:hover,
 .wrapper-2jXpOf:hover .content-1x5b-n {
   background-color: rgba(0, 0, 0, 0.25);
 }
-
 .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n {
   background-color: rgba(0, 0, 0, 0.45);
 }
-
 .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after,
 .wrapper-2jXpOf:hover .content-1x5b-n::after {
   transform: translateX(0);
+}
+
+/* Removes the black borders from stream */
+.video-xBa92B{background-color: transparent;}
+
+/* Removes the not seen line under user box */
+.container-3baos1{margin: 0px;}
+
+/* Spoiler Check ((!)) */
+.checkbox-1ix_J3 /*Check*/{
+  background-color: var(--background-secondary) !important;
+  border: 1.5px solid var(--primary) !important;
+}
+
+/* Makes a couple backgrounds dark and transparent */
+.theme-dark .elevationHigh-1PneE4, /* "Careful, you have unfinished changes!" */
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:disabled /* "Clear Permissions" */{
+  background-color: rgba(12, 14, 19, 0.9) !important;
+}
+
+/* transparent search bar key words */
+.theme-dark .searchAnswer-3Dz2-q, .theme-dark .searchFilter-2ESiM3{
+  background-color: transparent;
+}
+
+/* "Download Plugin" fix [*] */
+.PluginDownloaderApply:not(.applied) div:hover{
+  background-color: var(--background-primary-alt) !important;
+  padding: 9px 5px; /*og is 3px 5px*/
+}
+
+/** Better pins pop out **/
+/* Removes borders from pinned messages */
+.messageGroupWrapper-o-Zw7G{
+  border: 0px;
+}
+.messagesPopoutWrap-1MQ1bW{
+  width: 500px;
+  max-height: 880px !important;
+}
+
+/* steam  preview */
+.streamPreview-3YL8OQ {
+  background: #000000;
+}
+/* mic icon inside mute bubble */
+.colorable-1bkp8v.white-3GPOIp, .colorable-1bkp8v.white-3GPOIp .centerIcon-2G6o-T{
+  color: #fff;
+}
+/* Quality indicator */
+.liveQualityIndicator-3XCjEU{
+  background: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 151% 151%;
+  padding-right: 3px;
+}
+.liveIndicator-3FNmiB,.live-vBWnV6 {
+  background-color: var(--danger) !important;
 }
