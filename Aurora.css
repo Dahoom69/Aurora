@@ -201,7 +201,9 @@ stuff with ((!)) are for me to fix later
 .pro-1T8RK7 .base-1x0h_U .size12-3cLvbJ /* i forgot lol */,
 .rtcConnectionStatusConnected-VRZDjy /* RTC connection text */,
 .rtcConnectionQualityFine-2J6i8z .pingForeground-2uAOZ3 /* RTC green icon */,
-.added-2hLRj3, .added-2hLRj3:after /* "New Features" */{
+.added-2hLRj3, .added-2hLRj3:after /* "New Features" */,
+.plusIcon-v0BTrL /* Plus icon in search options */,
+.theme-dark .secured-1Yihly /* "IP address secured" in RTC pop up *//* the lock icon for later .secured-1Yihly:before ((!)) */{
   color: var(--secondary) !important;
 } 
 .updateIconForeground-3tnNZn /* "Update Ready!" */ {
@@ -213,7 +215,8 @@ stuff with ((!)) are for me to fix later
 
 /** Makes stuff blue **/
 .radioIconForeground-XwlXQN /* Blurple dot inside a selected plugin */,
-.colorDefault-2K3EoJ .checkbox-3s5GYZ, .colorDefault-2K3EoJ .radioSelection-1HmrQS /* Above but for vc */{
+.colorDefault-2K3EoJ .checkbox-3s5GYZ, .colorDefault-2K3EoJ .radioSelection-1HmrQS /* Above but for vc */,
+.theme-dark .resultsGroup-r_nuzN .searchLearnMore-3SQUAj a /* Search options "learn more" */{
   color: var(--primary);
 }
 .iconBadge-qZ4Ksk /* Pin mark*/,
@@ -238,7 +241,8 @@ svg.slider-TkfMQL svg {
 .colorable-1bkp8v.red-33-Lnk .centerIcon-2G6o-T /* Leave Stream */,
 .slash-33-IMF /* Slash in mute bubble in vc */,
 .strikethrough-1n4ekb /* Slash on mute and deafen icons */,
-.rtcConnectionQualityBad-1J7mUU .pingForeground-2uAOZ3:first-child /* RTC red / poor connection */ {
+.rtcConnectionQualityBad-1J7mUU .pingForeground-2uAOZ3:first-child /* RTC red / poor connection */,
+.resultsGroup-r_nuzN .searchClearHistory-2cSSMO /* Clear history option */ {
   color: var(--danger) !important ;
 }
 .fixed-3zCC84:after{
@@ -443,7 +447,7 @@ border-color: var(--background-secondary-alt);
 .theme-dark .modal-yWgWj- /* Notebook [*] */,
 .header-ykumBX /* Pins header */,
 .messagesPopoutWrap-1MQ1bW /* Pins pop out */,
-.video-8eMOth /*embeded videos*/ {
+.video-8eMOth /*embeded videos*/{
   background-color: var(--background-primary);
 }
 .tileChild-31WXi8 /* Stream has ended */,
@@ -467,8 +471,11 @@ border-color: var(--background-secondary-alt);
 .header-ywPcAE /* Headers for the above */,
 .list-donH_Z, .unicodeShortcut-15J8Ck /* Server side bar for the above */,
 .inspector-S2gM3e /* Bottom bar */,
-.theme-dark .autocomplete-1vrmpx /* Emote auto complete page */
-{
+.theme-dark .autocomplete-1vrmpx /* Emote auto complete page */,
+.scroller-2ymjU1 /* Spectators */,
+.overflow-1ExsZm /* Spectators +X */,
+.theme-dark .container-3ayLPN /* Search options pop up */,
+.theme-dark .container-2x5lvQ section,.theme-dark .container-2x5lvQ .header-2C89wJ /* RTC Connection pop up */{
   background-color: var(--background-primary-alt);
 }
 .theme-dark .headerNormal-T_seeN /* Top part of user pop out */,
@@ -478,8 +485,9 @@ border-color: var(--background-secondary-alt);
 .colorable-1bkp8v.white-3GPOIp:hover /* Mute bubble in vc */, 
 .colorable-1bkp8v.red-33-Lnk:hover /* Leave stream bubble */,
 .theme-dark .selected-1Tbx07 /* Emote selected */,
-.categoryItemDefaultCategorySelected-_HCKoz, .categoryItemDefaultCategorySelected-_HCKoz:hover, .emojiItem-14v6tW.emojiItemSelected-1aLkfV,.guildIcon-3h-1IH /* Selected option in emote picker */
-{
+.categoryItemDefaultCategorySelected-_HCKoz, .categoryItemDefaultCategorySelected-_HCKoz:hover, .emojiItem-14v6tW.emojiItemSelected-1aLkfV,.guildIcon-3h-1IH /* Selected option in emote picker */,
+.theme-dark .memberListItem-2ZX2pl:not(.popoutDisabled-xucru2):hover /* Selected spectator */,
+.theme-dark .option-96V44q.selected-rZcOL- /* Selected search option */{
   background-color: var(--background-secondary);
 }
 /* {
@@ -655,4 +663,12 @@ border-color: var(--background-secondary-alt);
 }
 .liveIndicator-3FNmiB,.live-vBWnV6 {
   background-color: var(--danger) !important;
+}
+
+/* Search options dark blue gradient */
+.theme-dark .option-96V44q:after{
+background: linear-gradient(90deg,rgba(20, 23, 35, 0), var(--background-secondary) 150%);
+}
+.theme-dark .option-96V44q.selected-rZcOL-:after {
+  background: linear-gradient(90deg,rgba(20, 23, 35, 0),var(--background-secondary-alt) 100%);
 }
