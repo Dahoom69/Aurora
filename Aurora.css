@@ -237,7 +237,8 @@ svg.slider-TkfMQL svg {
 .fixed-3zCC84 /* "Fixed" pop up*/,
 .colorable-1bkp8v.red-33-Lnk .centerIcon-2G6o-T /* Leave Stream */,
 .slash-33-IMF /* Slash in mute bubble in vc */,
-.strikethrough-1n4ekb /* Slash on mute and deafen icons */ {
+.strikethrough-1n4ekb /* Slash on mute and deafen icons */,
+.rtcConnectionQualityBad-1J7mUU .pingForeground-2uAOZ3:first-child /* RTC red / poor connection */ {
   color: var(--danger) !important ;
 }
 .fixed-3zCC84:after{
@@ -245,7 +246,7 @@ svg.slider-TkfMQL svg {
 }
 
 /** Makes stuff yellow **/
-.rtcConnectionQualityAverage-3KV0u- .pingForeground-2uAOZ3:not(:last-child){
+.rtcConnectionQualityAverage-3KV0u- .pingForeground-2uAOZ3:not(:last-child) /* RTC yellow */{
  color: var(--warning);
 }
 /* ################################################################################################################################## */
@@ -300,7 +301,8 @@ svg.slider-TkfMQL svg {
 
 .consentCard-1iSxB_ /* "This section could be better" */,
 .itemCard-v9viV7 /* Active friends */,
-.theme-dark .inset-3sAvek /* Box for the above */ {
+.theme-dark .inset-3sAvek /* Box for the above */,
+.theme-dark .applicationStreamingPreviewWrapper-8QqvVY /* Stream */ {
   background-color: var(--background-primary-alt);
 }
 
@@ -460,7 +462,12 @@ border-color: var(--background-secondary-alt);
 .colorable-1bkp8v.red-33-Lnk /* Leave stream bubble */,
 .colorable-1bkp8v.primaryDark-3mSFDl.active-1QRrIS /* Camera ^ bubble in VC */,
 .colorable-1bkp8v.white-3GPOIp.active-1QRrIS /* Input device ^ bubble in VC */,
-.scroller-3BxosC /* VC  context menus */
+.scroller-3BxosC /* VC  context menus */,
+.contentWrapper-SvZHNd /* Emote picker */,
+.header-ywPcAE /* Headers for the above */,
+.list-donH_Z, .unicodeShortcut-15J8Ck /* Server side bar for the above */,
+.inspector-S2gM3e /* Bottom bar */,
+.theme-dark .autocomplete-1vrmpx /* Emote auto complete page */
 {
   background-color: var(--background-primary-alt);
 }
@@ -469,7 +476,9 @@ border-color: var(--background-secondary-alt);
 .participantsButton-KYW-IW:hover /* Hide participants Hover */,
 .colorable-1bkp8v.primaryDark-3mSFDl:hover /* Share Screen / Turn on camera */,
 .colorable-1bkp8v.white-3GPOIp:hover /* Mute bubble in vc */, 
-.colorable-1bkp8v.red-33-Lnk:hover /* Leave stream bubble */
+.colorable-1bkp8v.red-33-Lnk:hover /* Leave stream bubble */,
+.theme-dark .selected-1Tbx07 /* Emote selected */,
+.categoryItemDefaultCategorySelected-_HCKoz, .categoryItemDefaultCategorySelected-_HCKoz:hover, .emojiItem-14v6tW.emojiItemSelected-1aLkfV,.guildIcon-3h-1IH /* Selected option in emote picker */
 {
   background-color: var(--background-secondary);
 }
