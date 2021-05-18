@@ -8,7 +8,8 @@ to port spectra's Nocturnal theme to powercord and improve on it, idk i never wr
 
 ### progress
 
-- porting the theme and making it cleaner / easier to read and edit [60%]
+- porting the theme and making it cleaner / easier to read and edit [95%]
+- making a version with a unique flare (where the aurora part comes from)
 - light mode support [0%] 
 
 ### future plans
