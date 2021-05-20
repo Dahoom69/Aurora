@@ -1,16 +1,7 @@
-# Aurora
- WIP fork of Nocturnal theme by Spectra
-
-### what's the point of this theme?
-to port spectra's Nocturnal theme to powercord and improve on it, idk i never wrote a readme before.
+# Noc branch
+The point of this is to resemble spectra's original Nocturnal theme as close as possible, with only minor addictions and fixes by me
 
 
-
-### progress
-
-- porting the theme and making it cleaner / easier to read and edit [95%]
-- making a version with a unique flare (where the aurora part comes from)
-- light mode support [0%] 
 
 ### future plans
 
