@@ -19,7 +19,7 @@ This theme can be used in both Dark and Light modes with Light mode offering a w
 You are not allowed to redistribute this theme or any part of it as your own, but editing it for personal use is allowed.
 
 FAQ: stuff with [*] are related to plugins, stuff with {S} are directly taken from Spectra (obv changed a bit to fit powercord / be cleaner)
-stuff with ((!)) are for me to fix later
+stuff with ((!)) are for me to fix later, while the ones with a number inside them are for snippet ids.
 /* ################################################################################################################################## */
 /*** Common stuff ***/
 
@@ -147,24 +147,28 @@ stuff with ((!)) are for me to fix later
 .theme-dark .watchButton-2SbJEo:not([disabled]):hover /* Watch Stream */,
 .lookFilled-1Gx00P.colorGreen-29iAKY:hover /* "Send Friend Request", "Enable all" */,
 .button-3HqqDX:hover /* Close stream */,
+.topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ/* Selected option in Friends page*/,
 .theme-dark .watchButton-2SbJEo:disabled /* "Watching Stream" */,
 .button-1YfofB.buttonColor-7qQbGO.buttonActive-3FrkXp /* " --> Screen" when you already shared your screen */,
 .theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:disabled /* Same as above but gray */,
 .theme-dark .lookGhost-2Fn_0-.colorGrey-2DXtkV:hover /* "Browse" for one of lighty's plugin [*] */,
 .buttonColor-2Nx30V:hover /* Invite to stream */,
-.theme-dark .lookOutlined-3sRXeN.colorPrimary-3b3xI6:hover /* White buttons */{
+.theme-dark .lookOutlined-3sRXeN.colorPrimary-3b3xI6:hover /* White buttons */,
+.lookInverted-2D7oAl.colorBrand-3pXr91:hover /* Switch plans */{
   color: #fff;
-  border: 1.5px solid transparent;
+  border-color: transparent;
   background-color: var(--primary);
   background-image: linear-gradient(
     to right,
     var(--gradient1),
     var(--gradient2)
-  );
+  ) !important;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: 111% 111%;
+  text-shadow: 0px 1px 1px #000;
+  background-size: 120% 120%;
 }
+
+
 
 /* Green buttons */
 .lookOutlined-3sRXeN.colorGreen-29iAKY/* Most green buttons (invite to server, etc) */ {
@@ -175,19 +179,22 @@ stuff with ((!)) are for me to fix later
 }
 
 /* Yellow buttons */
-.lookFilled-1Gx00P.colorYellow-2JqYwt /* Most yellow buttons "Pause Updates" */ {
+.lookFilled-1Gx00P.colorYellow-2JqYwt /* Most yellow buttons "Pause Updates" */,
+.theme-dark .lookOutlined-3sRXeN.colorGrey-2DXtkV /* Toast's "Postpone" */ {
   background-color: var(--background-secondary);
   border: 1.5px solid var(--warning);
   border-radius: 5px;
   color: #fff;
 }
 /* When hovered */
-.lookFilled-1Gx00P.colorYellow-2JqYwt:hover /* Most yellow buttons "Pause Updates" */{
+.lookFilled-1Gx00P.colorYellow-2JqYwt:hover /* Most yellow buttons "Pause Updates" */,
+.lookOutlined-3sRXeN.colorGrey-2DXtkV:hover /* Toast's "Postpone" */{
   color: #fff;
-  border: 1.5px solid transparent;
-  background-image: linear-gradient(to right, rgb(250, 166, 26), var(--warning));
+  border-color: transparent;
+  background-image: linear-gradient(to right, rgb(255, 215, 0), var(--warning));
   background-position: center;
   background-repeat: no-repeat;
+  text-shadow: 0px 1px 1px #000;
   background-size: 120% 120%;
 }
 
@@ -201,10 +208,11 @@ stuff with ((!)) are for me to fix later
 /* When hovered */
 .lookOutlined-3sRXeN.colorRed-1TFJan:hover /* Most red buttons */ {
   color: #fff;
-  border: 1.5px solid transparent;
+  border-color: transparent;
   background-image: linear-gradient(to right, rgba(170, 30, 30), var(--danger));
   background-position: center;
   background-repeat: no-repeat;
+  text-shadow: 0px 1px 1px #000;
   background-size: 120% 120%;
 }
 
@@ -238,15 +246,16 @@ stuff with ((!)) are for me to fix later
 .theme-dark .resultsGroup-r_nuzN .searchLearnMore-3SQUAj a /* Search options "learn more" */,
 .colorBrand-2tjs5J /* Ping enabled in reply */,
 .tipTitle-GL9qAt /* "Did you know?" in the loading screen */,
-.executedCommand-2GE3w2 .commandName-1klrjB /* New blurple commands */{
+.executedCommand-2GE3w2 .commandName-1klrjB /* New blurple commands */,
+.hn-tool-expand .hn-expand-icon:hover /* Holy note's isolate message [*] */{
   color: var(--primary);
 }
 .iconBadge-qZ4Ksk /* Pin mark*/,
 .wanderingCubesItem-WPXqao /* the spinning blurple block when loading */,
 .unread-1xRYoj /* "NEW UNREADS" bubble in channel list */,
 .barFill-23-gu- /* Blurple bar in context menu */,
-.progressBar-3u8FBM.small-1CUeBa.animating-3Qqqzp/* Uploading progress bar ((!)) */ {
-  background-color: var(--primary) !important; /* progress bar needs !important */
+.progressBar-3u8FBM.small-1CUeBa.animating-3Qqqzp/* Uploading progress bar (needs !important) */{
+  background-color: var(--primary) !important; 
 }
 svg.slider-TkfMQL svg {
   display: none;
@@ -266,8 +275,10 @@ svg.slider-TkfMQL svg {
 .plusIcon-v0BTrL /* Plus icon in search options */,
 .theme-dark .secured-1Yihly /* "IP address secured" in RTC pop up *//* the lock icon for later .secured-1Yihly:before ((!)) */,
 .pro-1T8RK7 /* PROTIP: for pins */,
-.colorable-1bkp8v.green-plH-Mj /* Join dm call buttons */
-{
+.colorable-1bkp8v.green-plH-Mj /* Join dm call buttons */,
+.hn-tool-jump .hn-jump-icon:hover /* Holy note's jump to message [*] */,
+.attachButtonPlay-3iJ0mf /* Invite to game */,
+.fa-check-circle:before /* Toasts "Success" icon */{
   color: var(--secondary) !important;
 }
 .updateIconForeground-3tnNZn /* "Update Ready!" */ {
@@ -293,10 +304,16 @@ svg.slider-TkfMQL svg {
 .rtcConnectionQualityBad-1J7mUU .pingForeground-2uAOZ3:first-child /* RTC red / poor connection */,
 .resultsGroup-r_nuzN .searchClearHistory-2cSSMO /* Clear history option */,
 .theme-dark .keybind-KpFkfr /* "ESC" in settings */,
-.lookLink-9FtZy- .contents-18-Yxp /* "No Thanks" to joining discord servers */ {
-  color: var(--danger) !important ;
+.hn-tool-delete .hn-delete-icon:hover /* Holy note's remove message [*] */,
+.close-hZ94c6,.close-hZ94c6:hover /* Holy note's close notebook [*] */,
+.button-1ZiXG9.dangerous-2r8KxV /* Delete message */,
+.actionButton-uPB8Fs.actionDeny-de_uKj:hover /* Unblock (needs !important) */,
+.fa-times:before /* Close Toast X */{
+  color: var(--danger) !important;
 }
-
+.button-1ZiXG9.dangerous-2r8KxV:hover /* Delete message but hovered */{
+color: rgb(255, 40, 40) !important;
+}
 
 .fixed-3zCC84:after /* Fixed stuff in what's new pop up */,
 .unreadPill-2HyYtt /* New unread pills */ {
@@ -554,7 +571,8 @@ svg.slider-TkfMQL svg {
 .video-8eMOth /*embeded videos*/,
 .container-16j22k /* Loading */,
 .app-2rEoOp /* App background? */,
-.theme-dark .contentWrapper-3WC1ID /* Join server */{
+.theme-dark .contentWrapper-3WC1ID /* Join server */,
+#EditUploadsCanvasWrapper /* Edit uploads main background [*] */{
   background-color: var(--background-primary);
 }
 .tileChild-31WXi8 /* Stream has ended */,
@@ -586,7 +604,8 @@ svg.slider-TkfMQL svg {
 .theme-dark .focused-2bY0OD /* i forgot lol */, 
 .categoryHeader-O1zU94 /* Bot at the top while typing / commands */,
 .theme-dark .invite-18yqGF /* Invited to game */,
-.theme-dark .inviteRow-2L02ae:hover /* Invite friends to server */{
+.theme-dark .inviteRow-2L02ae:hover /* Invite friends to server */,
+#EditUploadsToolbar /* Edit uploads toolbar [*] */{
   background-color: var(--background-primary-alt);
 }
 .theme-dark .headerNormal-T_seeN /* Top part of user pop out */,
@@ -599,14 +618,16 @@ svg.slider-TkfMQL svg {
 .categoryItemDefaultCategorySelected-_HCKoz, .categoryItemDefaultCategorySelected-_HCKoz:hover, .emojiItem-14v6tW.emojiItemSelected-1aLkfV,.guildIcon-3h-1IH /* Selected option in emote picker */,
 .theme-dark .memberListItem-2ZX2pl:not(.popoutDisabled-xucru2):hover /* Selected spectator */,
 .theme-dark .option-96V44q.selected-rZcOL- /* Selected search option */,
-.childWrapper-anI2G9 /* Servers without a pic */
-{
-  background-color: var(--background-secondary);
+.childWrapper-anI2G9 /* Servers without a pic */,
+.footer-1kmXd4 /* Bottom part of pins popup */,
+#EditUploadsToolbar .tool:hover /* Edit uploads selected items [*] */,
+.hn-tools /* Holy notes options (needs !important) [*] */{
+  background-color: var(--background-secondary) !important;
 }
-
 .theme-dark .option-1B5ZV8 /* uhh "message", "user", etc bubble while using bot commands */,
 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9, .wrapper-1BJsBx:hover .childWrapper-anI2G9 /* Servers without a pic (hovered / selected) */,
-::placeholder, input, select, textarea/* User popout text */{
+::placeholder, input, select, textarea/* User popout text */,
+#EditUploadsToolbar .selected .tool /* Edit uploads selected items [*] */{
   background-color: var(--background-secondary-alt) !important;
 }
 /** Small details **/
@@ -639,7 +660,8 @@ svg.slider-TkfMQL svg {
 }
 
 /* Removes borders */
-.tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */ {
+.tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */,
+.powercord-toast /* Powercord Toasts */ {
   border: none;
 }
 
@@ -702,9 +724,11 @@ color: var(--primary);
   background-color: transparent;
 }
 
-/* "Download Plugin" fix [*] */
-.PluginDownloaderApply:not(.applied) div:hover {
-  background-color: var(--background-primary-alt);
+/* "Download Plugin/Theme and apply CSS Snippet" fix [*] */
+.PluginDownloaderApply:not(.applied) div:hover,
+.ThemeDownloaderApply:not(.applied) div:hover,
+.powercord-snippet-apply:not(.applied) div:hover {
+  background-color: var(--background-primary-alt) !important;
   padding: 9px 5px; /*og is 3px 5px*/
 }
 
@@ -843,37 +867,213 @@ color: var(--primary);
 
 /* PowercordToasts (thanks Leeprky) ((!))*/
 .powercord-toast /* Toast's main background */{
-  background-color: var(--background-primary);
+  background-color: var(--background-primary-alt);
 }
 .powercord-toast .header /* Toast's top bar */ {
-  background-color: var(--background-primary);
+  background-color: var(--background-primary-alt);
 }
-.powercord-toast .buttons /* nothing as of yet */ {
-  background-color: var(--background-secondary) !important;
+.powercord-toast .buttons /* the bottom part of toasts */ {
+  background-color: var(--background-primary-alt);
 }
-.lookGhost-2Fn_0-.colorBrand-3pXr91 /* nothing as of yet */ {
+.lookGhost-2Fn_0-.colorBrand-3pXr91 /* Toasts nothing as of yet ((!)) */ {
   color: #000 !important;
   background-color: #fff;
 }
-.lookGhost-2Fn_0-.colorBrand-3pXr91:hover /* nothing as of yet */ {
+.lookGhost-2Fn_0-.colorBrand-3pXr91:hover /* Toasts nothing as of yet  ((!))*/ {
   color: #000 !important;
 }
-.lookOutlined-3sRXeN.colorGrey-2DXtkV /* Toast's "Ignore" button */ {
-  color: #F4F7F5;
-  border-color: #b6bec9;
-  background-color: #747f8d93;
-}
-.lookOutlined-3sRXeN.colorGrey-2DXtkV:hover /* Toast's "Ignore" button */ {
-  color: #F4F7F5;
-  border-color: #cbd3df;
-  background-color: #99a6b893;
-}
+/* idk ((!)) */
 .powercord-toast .header {
   font-size: 15px;
 }
 .powercord-toast .contents .inner {
   background-color: transparent;
   border: none;
+}
+
+/* Better chat box, thanks to Hummingbird ((804665923801579541)) */
+.channelTextArea-rNsIhG /* Chat box */{ 
+  margin-bottom: 4px; 
+}
+.form-2fGMdU { 
+  padding: 0 3px; 
+}
+
+.wrapper-39oAo3 /* Follow box */{
+  display: none;
+}
+
+.base-gE7OpD { /* typing and slowmode stuff */
+    top: -20px; /* height is 24px */
+}
+
+/* "Jump to present" pill thanks to Yellowsink ((805724588277104680)) */
+.jumpToPresentBar-G1R9s6 .barButtonMain-3K-jeJ { display: none; }
+.jumpToPresentBar-G1R9s6 {
+    display: block;
+    background-color: transparent;
+    right: 12px;
+}
+.jumpToPresentBar-G1R9s6 .barButtonAlt-mYL1lj {
+    float: right;
+    bottom: .7rem;
+    right: -.5rem;
+}
+
+/* Wider search results section thanks to Robzyy ((755531385090998364)) */
+.searchResultsWrap-3-pOjs{ 
+  width: 510px; 
+}
+.container-3baos1{
+  padding: 0px;
+}
+
+/* Compact settings menu thanks to The Arcane Brony ((804898065034641438)) */
+/* - small dividers - */
+.marginBottom20-32qID7 {
+  margin-bottom: 5px;
+}
+.dividerDefault-3rvLe- {
+  margin-top: 5px;
+}
+/* - large dividers - */
+.marginBottom40-2vIwTv {
+  margin-bottom: 10px;
+}
+.marginTop40-i-78cZ {
+  margin-top: 10px;
+}
+/* - compact games list - */
+.game-1ipmAa {
+  position: relative;
+  padding: 5px 0;
+}
+/* - compact notification settings - */
+.notificationsSound-27jFSh {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* - compact account settings - */
+.marginTop60-3PGbtK {
+  margin-top: 20px;
+}
+/* - compact billing list - */
+.summaryInfo-2QFKUg {
+  cursor: pointer;
+  padding: 5px;
+}
+/* - compact billing tab - */
+.codeRedemptionRedirect-1wVR4b {
+  margin-top: 5px;
+}
+.paymentHistory-2FXzro {
+  margin-top: 10px;
+}
+/* compact discord language settings */
+.item-3eFBNF {
+  padding: 8px;
+}
+.item-3eFBNF > .powercord-text {
+  display: none !important;
+}
+
+/* small experiments menu, might break shit */
+.marginTop20-3TxNs6 {
+  margin-top: 8px;
+}
+
+/* compact server settings */ 
+.divider-3wNib3 {
+  margin-top: 4px;
+  padding-top: 4px;
+}
+.switchItem-2hKKKK {
+  margin-bottom: 4px;
+}
+
+/* compact emoji settings */
+.emojiRow-zIc7ZX {
+  position: relative;
+  height: 48px;
+}
+/* compact integrations */ 
+.card-o7rAq- {
+  padding: 5px 16px;
+  margin-bottom: 4px;
+} 
+
+/* Compact plugins and themes lists thanks to Freeplay ((793110349645742090)) */
+.powercord-product {
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    background: none;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border-bottom: thin solid var(--background-secondary-alt);
+    border-radius: 0;
+}
+.powercord-product-header {
+    margin: 0 !important;
+    order: -2;
+    flex: 1 1 60%;
+}
+.powercord-product-details {
+    width: 100%;
+}
+.powercord-product .description, .powercord-product .metadata, .powercord-product-permissions {
+    margin: 0 !important;
+    margin-top: 6px !important;
+    color: var(--header-secondary);
+    font-size: 14px;
+}
+.powercord-product .metadata .author {
+    flex-grow: 1;
+}
+.powercord-product .metadata .license {
+    justify-content: flex-end;
+    width: auto !important;
+    margin-left: 20px !important;
+}
+.powercord-product .metadata .version {
+    width: 105px !important;
+    order: 2;
+    justify-content: flex-end;
+}
+.powercord-product .metadata .version > div {
+    margin-right: 0 !important;
+}
+.powercord-product .metadata .version > div:first-child,
+.powercord-product .metadata .license > div:first-child {
+    order: 2;
+    margin-right: 0 !important;
+    margin-left: 5px !important;
+}
+.powercord-product .metadata .license > div:last-child,
+.powercord-product .metadata .author > div:first-child {
+    margin-right: 4px !important;
+}
+.powercord-product-footer {
+    margin: 0 !important;
+    order: -1;
+    margin-left: 6px !important;
+}
+.powercord-product-footer .lookFilled-1Gx00P.colorRed-1TFJan {
+    border-radius: 100px;
+    padding: 0 !important;
+    height: 24px !important;
+    min-height: unset !important;
+    min-width: unset !important;
+    padding: 0 8px !important;
+}
+.powercord-product .dividerDefault-3rvLe-,
+.powercord-product .description > div:first-child { 
+    display: none;
+}
+
+.theme-dark .header-1pGpFt{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA4MCIgaGVpZ2h0PSI1NDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk2IC0xMDApIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9InJnYmEoMCwwLDAsLjI1KSI+PHBhdGggZD0iTTE0Mi44MzYgMTgxTDI4NS42NyAzMjMuODM3IDE0Mi44MzYgNDY2LjY3MiAwIDMyMy44MzZ6Ii8+PGNpcmNsZSBjeD0iNTA4LjUiIGN5PSIxMTYuNSIgcj0iMTE2LjUiLz48Y2lyY2xlIGN4PSI5MjUuNSIgY3k9IjczNi41IiByPSIxMTYuNSIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4NCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg2MCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwOCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4NCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg2MCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwOCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NiIgY3k9IjIyMCIgcj0iNCIvPjxwYXRoIGQ9Ik0xMDY3LjgzNiA0NC42MjJMMTEyOS44OTcgMTNsMTgxLjA0IDM1NS4zMS02Mi4wNjEgMzEuNjIyYy05LjQ3MyA0LjgyNi0yMS4wNjUgMS4wNi0yNS44OTItOC40MTNhMTkuMjUgMTkuMjUgMCAwIDEtLjE3Ny0xNy4xMjNjMTAuNDQyLTIxLjU4NCAxLjQxLTQ3LjU0NS0yMC4xNzMtNTcuOTg2YTQzLjQxMyA0My40MTMgMCAwIDAtMTEuMjMyLTMuNjVsLTIuMzI2LS40MTdjLTIxLjI2NS0zLjgyLTM1LjQwNy0yNC4xNTYtMzEuNTg4LTQ1LjQyYTM5LjEyIDM5LjEyIDAgMCAxIDQuMzU3LTEyLjE3MmMxMC41NDItMTguODYgMy44LTQyLjY5NC0xNS4wNi01My4yMzZhMzkuMTIgMzkuMTIgMCAwIDAtMTIuMTcxLTQuMzU2bC00LjY1My0uODM2Yy0yMS4yNjUtMy44Mi0zNS40MDctMjQuMTU1LTMxLjU4OC00NS40MmEzOS4xMiAzOS4xMiAwIDAgMSA0LjM1Ny0xMi4xNzJjMTAuNTQyLTE4Ljg2IDMuOC00Mi42OTMtMTUuMDYtNTMuMjM1YTM5LjEyIDM5LjEyIDAgMCAwLTEyLjE3MS00LjM1N2wtMi4zMjYtLjQxOGMtMTAuNDY1LTEuODgtMTcuNDI0LTExLjg4Ni0xNS41NDQtMjIuMzVhMTkuMjUgMTkuMjUgMCAwIDEgMTAuMjA3LTEzLjc1ek03ODcgMzkxbDYzIDEyNkg3MjR6TTU4NyA1NDd2ODdIMjQ0di04N3oiLz48L2c+PC9zdmc+);
 }
 
 /* User playing X background */
@@ -897,12 +1097,3 @@ color: var(--primary);
 	linear-gradient(to top right, #593695, #8a00e6 80%)
 }
 
-/* moves the users in vc a little bit to the left */
-.list-2luk8a{
-  padding-left: 20px;
-}
-
-/* makes search results bigger */
-.searchResultsWrap-3-pOjs{ 
-  width: 475px;
-}
