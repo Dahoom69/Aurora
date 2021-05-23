@@ -191,7 +191,7 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .lookOutlined-3sRXeN.colorGrey-2DXtkV:hover /* Toast's "Postpone" */{
   color: #fff;
   border-color: transparent;
-  background-image: linear-gradient(to right, rgb(250, 134, 26), var(--warning));
+  background-image: linear-gradient(to right, rgb(255, 215, 0), var(--warning));
   background-position: center;
   background-repeat: no-repeat;
   text-shadow: 0px 1px 1px #000;
@@ -624,7 +624,6 @@ color: rgb(255, 40, 40) !important;
 .hn-tools /* Holy notes options (needs !important) [*] */{
   background-color: var(--background-secondary) !important;
 }
-
 .theme-dark .option-1B5ZV8 /* uhh "message", "user", etc bubble while using bot commands */,
 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9, .wrapper-1BJsBx:hover .childWrapper-anI2G9 /* Servers without a pic (hovered / selected) */,
 ::placeholder, input, select, textarea/* User popout text */,
@@ -893,8 +892,16 @@ color: var(--primary);
 }
 
 /* Better chat box, thanks to Hummingbird ((804665923801579541)) */
-.channelTextArea-rNsIhG, .wrapper-39oAo3{ margin-bottom: 5px; }
-.form-2fGMdU { padding: 0 4px; }
+.channelTextArea-rNsIhG /* Chat box */{ 
+  margin-bottom: 4px; 
+}
+.form-2fGMdU { 
+  padding: 0 3px; 
+}
+
+.wrapper-39oAo3 /* Follow box */{
+  display: none;
+}
 
 .base-gE7OpD { /* typing and slowmode stuff */
     top: -20px; /* height is 24px */
@@ -1063,6 +1070,10 @@ color: var(--primary);
 .powercord-product .dividerDefault-3rvLe-,
 .powercord-product .description > div:first-child { 
     display: none;
+}
+
+.theme-dark .header-1pGpFt{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA4MCIgaGVpZ2h0PSI1NDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk2IC0xMDApIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9InJnYmEoMCwwLDAsLjI1KSI+PHBhdGggZD0iTTE0Mi44MzYgMTgxTDI4NS42NyAzMjMuODM3IDE0Mi44MzYgNDY2LjY3MiAwIDMyMy44MzZ6Ii8+PGNpcmNsZSBjeD0iNTA4LjUiIGN5PSIxMTYuNSIgcj0iMTE2LjUiLz48Y2lyY2xlIGN4PSI5MjUuNSIgY3k9IjczNi41IiByPSIxMTYuNSIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjEwMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjEyNCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjE0OCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4MyIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg1OSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwNyIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NSIgY3k9IjE3MiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4NCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg2MCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwOCIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NiIgY3k9IjE5NiIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg4NCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijg2MCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgzNiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjgxMiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkwOCIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9IjkzMiIgY3k9IjIyMCIgcj0iNCIvPjxjaXJjbGUgY3g9Ijk1NiIgY3k9IjIyMCIgcj0iNCIvPjxwYXRoIGQ9Ik0xMDY3LjgzNiA0NC42MjJMMTEyOS44OTcgMTNsMTgxLjA0IDM1NS4zMS02Mi4wNjEgMzEuNjIyYy05LjQ3MyA0LjgyNi0yMS4wNjUgMS4wNi0yNS44OTItOC40MTNhMTkuMjUgMTkuMjUgMCAwIDEtLjE3Ny0xNy4xMjNjMTAuNDQyLTIxLjU4NCAxLjQxLTQ3LjU0NS0yMC4xNzMtNTcuOTg2YTQzLjQxMyA0My40MTMgMCAwIDAtMTEuMjMyLTMuNjVsLTIuMzI2LS40MTdjLTIxLjI2NS0zLjgyLTM1LjQwNy0yNC4xNTYtMzEuNTg4LTQ1LjQyYTM5LjEyIDM5LjEyIDAgMCAxIDQuMzU3LTEyLjE3MmMxMC41NDItMTguODYgMy44LTQyLjY5NC0xNS4wNi01My4yMzZhMzkuMTIgMzkuMTIgMCAwIDAtMTIuMTcxLTQuMzU2bC00LjY1My0uODM2Yy0yMS4yNjUtMy44Mi0zNS40MDctMjQuMTU1LTMxLjU4OC00NS40MmEzOS4xMiAzOS4xMiAwIDAgMSA0LjM1Ny0xMi4xNzJjMTAuNTQyLTE4Ljg2IDMuOC00Mi42OTMtMTUuMDYtNTMuMjM1YTM5LjEyIDM5LjEyIDAgMCAwLTEyLjE3MS00LjM1N2wtMi4zMjYtLjQxOGMtMTAuNDY1LTEuODgtMTcuNDI0LTExLjg4Ni0xNS41NDQtMjIuMzVhMTkuMjUgMTkuMjUgMCAwIDEgMTAuMjA3LTEzLjc1ek03ODcgMzkxbDYzIDEyNkg3MjR6TTU4NyA1NDd2ODdIMjQ0di04N3oiLz48L2c+PC9zdmc+);
 }
 
 /* User playing X background */
