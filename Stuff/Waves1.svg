@@ -1,4 +1,4 @@
-<div class="inner" style="width: 600px; height: 710px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 0; background: rgb(20, 23, 31); display: block; z-index: 1; position: relative; --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor:#0f1118;" width="600" height="710" preserveAspectRatio="xMidYMid" viewBox="0 0 600 710" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 0; background: rgb(20, 23, 31); display: block; z-index: 1; position: relative; --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor:#0f1118;" width="600" height="710" preserveAspectRatio="xMidYMid" viewBox="0 0 600 710" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="">
 <g transform="translate(300,355) scale(1,1) translate(-300,-355)"><linearGradient id="lg-0.17402640646099377" x1="0" x2="1" y1="0" y2="0">
   <stop stop-color="#008ae6" offset="0" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#0069af;"></stop>
   <stop stop-color="#00e68a" offset="1" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#00af69;"></stop>
@@ -23,4 +23,4 @@
 </path><path d="" fill="url(#lg-0.17402640646099377)" opacity="0.1">
   <animate attributeName="d" dur="50s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-45s" values="M0 0L 0 242.88111709471775Q 100 86.19293935844536  200 63.96350394030573T 400 92.7748244237998T 600 139.00589189796665L 600 0 Z;M0 0L 0 277.8958740592708Q 100 390.2183684427874  200 345.7211725387842T 400 261.99402403786064T 600 162.15064437071422L 600 0 Z;M0 0L 0 196.88405009495622Q 100 262.71622868107397  200 221.4875112661946T 400 298.28687262849985T 600 86.11702728237852L 600 0 Z;M0 0L 0 242.88111709471775Q 100 86.19293935844536  200 63.96350394030573T 400 92.7748244237998T 600 139.00589189796665L 600 0 Z"></animate>
 </path></g>
-</svg></div>
+</svg>
