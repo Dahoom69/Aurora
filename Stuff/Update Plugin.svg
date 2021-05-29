@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(255, 255, 255, 0); display: block; z-index: 1; position: relative; --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor:rgba(23, 25, 26, 0);" width="1920" height="35" preserveAspectRatio="xMidYMid" viewBox="0 0 1920 35" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="">
 <g transform="translate(960,17.5) scale(1,1) translate(-960,-17.5)"><linearGradient id="lg-0.21265539503209574" x1="0" x2="1" y1="0" y2="0">
-  <stop stop-color="#008ae6" offset="0" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#0069af;"></stop>
-  <stop stop-color="#008ae6" offset="1" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#0069af;"></stop>
+  <stop stop-color="#e61e1e" offset="0" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#0069af;"></stop>
+  <stop stop-color="#e61e1e" offset="1" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor:#0069af;"></stop>
 </linearGradient><path d="" fill="url(#lg-0.21265539503209574)" opacity="0.54">
   <animate attributeName="d" dur="14.285714285714286s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="0s" values="M0 0L 0 -3.9411779348752134Q 480 27.309014276869043  960 2.5774749458573645T 1920 41.3523362908917L 1920 0 Z;M0 0L 0 -30.468303336460306Q 480 56.87273712456135  960 16.077076935659733T 1920 51.098266870613855L 1920 0 Z;M0 0L 0 -33.934109934633085Q 480 30.090606656165104  960 7.965882725325514T 1920 55.07580770698561L 1920 0 Z;M0 0L 0 -3.9411779348752134Q 480 27.309014276869043  960 2.5774749458573645T 1920 41.3523362908917L 1920 0 Z"></animate>
 </path><path d="" fill="url(#lg-0.21265539503209574)" opacity="0.54">
