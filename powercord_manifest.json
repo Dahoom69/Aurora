@@ -1,7 +1,7 @@
 {
     "name": "Aurora",
     "description": "2 dark themes in one, if you don't like the the cold palette you can switch to a warmer one (Light mode).",
-    "version": "0.9.2",
+    "version": "0.9.8",
     "author": "Rayan(Dahoom)#0113",
     "theme": "Aurora.css",
     "consent": false,
