@@ -361,7 +361,7 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .wanderingCubesItem-WPXqao /* the spinning blurple block when loading */,
 .unread-1xRYoj /* "NEW UNREADS" bubble in channel list */,
 .barFill-23-gu- /* Blurple bar in context menu */,
-.container-3auIfb:not([style*="125"]) /* Settings pills */,
+.container-3auIfb:not([style*="218"])/* Settings pills */,
 .mediaBarGrabber-1FqnbN, .mediaBarProgress-1xaPtl, .mediaBarProgress-1xaPtl:after, .mediaBarProgress-1xaPtl:before /* Embeded video's blurple bars */{
   background-color: var(--primary) !important; 
 }
@@ -1575,7 +1575,7 @@ background-size: 100%;
 	linear-gradient(to top right, #107c10, #00e68a 110%)
 }
 
-/* Gradient watermark */
+/* Gradient watermark test ((!)) */
 .wordmark-2iDDfm svg {
   display:none
   }
