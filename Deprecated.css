@@ -1,0 +1,31 @@
+/** People doing stuff corner **/
+
+/* User playing X background */
+.topSectionPlaying-1J5E4n {
+	z-index: 1;
+ background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
+	linear-gradient(to top right, var(--primary), var(--secondary)) !important;
+}
+.activity-fViXj7{
+padding-bottom: 16px;
+background-size: 100%;
+
+}
+/* User listening to Spotify  background*/
+.topSectionSpotify-1lI0-P{
+  z-index: 1;
+	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
+	linear-gradient(to top right, #1db945, var(--spotify-color) 150%)/* --spotify-color */
+}
+/* User streaming background */
+.topSectionStreaming-1Tpf5X{
+  z-index: 1;
+	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
+	linear-gradient(to top right, #593695, #8a00e6 80%)
+}
+/* Playing on Xbox Live */
+.topSectionXbox-3fWLjS{
+  z-index: 1;
+	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
+	linear-gradient(to top right, #107c10, #00e68a 110%)
+}

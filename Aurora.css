@@ -22,29 +22,33 @@ FAQ: stuff with [*] are related to plugins, stuff with {S} are directly taken fr
 stuff with ((!)) are for me to fix later, while the ones with a number inside them are for snippet ids.
 /* ################################################################################################################################## */
 /*** how to find an asset: copy it's id then place it here https://discordapp.com/assets/"insert id here".svg ***/
-
+/*** how to find an css snippet: copy it's id then place it here https://canary.discord.com/channels/538759280057122817/755005803303403570/"message id here" ***/
 /* Experiment Discord watermark */
 @import url("https://kckarnige.github.io/femboi_owo/discord-font.css");
 
 
 /* Variables */
 .theme-dark {
-  --background-primary: hsl(224, 22%, 13%);
+  --background-primary: rgb(25, 29, 38);
   /* Main channel chat area, Top bar, And the right side of settings */
-  --background-primary-alt: hsl(228, 27%, 11%);
+  --background-primary-alt: rgb(20, 24, 36);
   /* Slightly darker than background-primary, will mostly be used for highlighted stuff */
-  --background-secondary: hsl(231, 29%, 9%);
+  --background-secondary: rgb(16, 18, 30);
   /* Channels / Members bar, Left side of Settings */
-  --background-secondary-alt: hsl(223, 23%, 6%);
+  --background-secondary-alt: rgb(12, 14, 19);
   /* User Area box, some stuff in settings, etc */
   --primary: hsl(204, 100%, 45%);
   /* Main blue accent */
   --primary2: #008ae6e6;
   /* Main blue accent */
+  --primary-hue:204;
+  /* Used for mentions */
   --secondary: hsl(156, 100%, 45%);
   /* Secondary accent  */
   --secondary2: #00e68a1a;
   /* Secondary accent  */
+  --secondary-hue:156;
+  /* Used for mentions */
   --warning: #e68a00;
   /* Yellow accent */
   --warning2: #e68a001a;
@@ -64,11 +68,11 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Channels / Members bar, Left side of Settings */
   --background-secondary-alt: hsl(266, 23%, 6%);
   /* User Area box, some stuff in settings, etc */
-  --primary: #2225c3;
+  --primary: rgb(34, 37, 195);
   /* Main accent */
   --primary2: #2225c3e6;
   /* Main accent but a bit transparent */
-  --secondary: #e63600;
+  --secondary: rgb(230, 54, 0);
   /* Secondary accent */
   --secondary2: #e636001a;
   /* Secondary accent, a lot more transparent */
@@ -151,12 +155,14 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Links, and text inside embeds */
   --text-positive: var(--secondary);
   /* Idk where this is used exactly but it's green */
+  --info-positive-foreground: var(--secondary);
+  /* Green line in what's new page */
   --status-positive-background: var(--secondary);
   /* Same as above */
   --info-positive-background: var(--secondary2);
   /* Same as above but very transparent */
   --text-warning: var(--warning);
-  /* idk where this is used but it's yellow */
+  /* yellow text in What's new page */
   --info-warning-foreground: var(--warning);
   /* Same as above */
   --status-warning-background: var(--warning);
@@ -181,6 +187,8 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* The border of toasts */
   --brand-experiment: var(--primary) !important;
   /* The majority of blurple in discord */
+  --control-brand-foreground: var(--primary) !important;
+  /* The dots in settings */
   --brand-experiment-30a: var(--background-modifier-hover) !important;
   --brand-experiment-15a: var(--background-modifier-hover) !important;
   /* Mention backgrounds */
@@ -191,9 +199,9 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Blurple used in status picker, etc */
   --brand-experiment-500: var(--primary) !important;
   /* Blurple used in "Invite people", etc */
-  --brand-experiment-560: var(--primary) !important;
+  --brand-experiment-560: var(--background-modifier-hover) !important;
   /* Same as above but a bit darker */
-  --brand-experiment-600: var(--primary2) !important;
+  --brand-experiment-600: var(--background-modifier-active) !important;
   /* Another blurple it's a little darker, used when clicking on an option */
 }
 
@@ -236,8 +244,8 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .lookOutlined-3sRXeN.colorWhite-rEQuAQ:hover /* Join server X / "<-- Back" */,
 .topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ/* Selected option in Friends page*/,
 .categoryPill-34fszg.selected-1dONk0 /* Selected option in discovery page */,
-.tab-2j5AEF.selected-2LAck8 /* "Old" / "New" / "Relevant" in search */,
-.button-3To2tQ.buttonSize-DbrWhv /* Joined server */{
+.tab-2j5AEF.selected-2LAck8 /* "Old" / "New" / "Relevant" in search */
+/* Joined server */{
   color: #fff;
   border-color: transparent;
   background-color: var(--primary);
@@ -383,14 +391,14 @@ svg.slider-TkfMQL svg /* i forgot what this one does */{
 .pro-1T8RK7 .base-1x0h_U .size12-3cLvbJ /* i forgot lol */,
 .rtcConnectionStatusConnected-VRZDjy /* RTC connection text */,
 .rtcConnectionQualityFine-2J6i8z .pingForeground-2uAOZ3 /* RTC green icon */,
-.added-2hLRj3, .added-2hLRj3:after /* "New Features" */,
 .plusIcon-v0BTrL /* Plus icon in search options */,
 #app-mount .secured-1Yihly /* "IP address secured" in RTC pop up *//* the lock icon for later .secured-1Yihly:before ((!)) */,
 .pro-1T8RK7 /* PROTIP: for pins */,
 .hn-tool-jump .hn-jump-icon:hover /* Holy note's jump to message [*] */,
 .attachButtonPlay-3iJ0mf /* Invite to game */,
 .fa-check-circle:before /* Toasts "Success" icon */,
-.defaultValue-3gC7yw .markValue-2DwdXI /* Default numbers in settings */{
+.defaultValue-3gC7yw .markValue-2DwdXI /* Default numbers in settings */,
+.actionButton-uPB8Fs.actionAccept-LV-szU:hover > svg > path{
   color: var(--secondary) !important;
 }
 .updateIconForeground-3tnNZn /* "Update Ready!" */ {
@@ -500,7 +508,8 @@ color: rgb(255, 40, 40) !important;
 .container-3baos1 /* User avatar box */,
 .peopleColumn-29fq28 /* Add friends */,
 .input-2VB9rf /* search friends text box */,
-::placeholder, body, button, input, select, textarea /* backdrop of discord? ((!)) */{
+::placeholder, body, button, input, select, textarea /* backdrop of discord? ((!)) */,
+.callContainer-36WRfH, .centerControls-2E5oVA /* DM call background */{
   background-color: var(--background-primary);
 }
 
@@ -560,8 +569,9 @@ color: var(--secondary) !important;
   width: 530px;
 }
 
-/* Fixes the bot text being way oof center */
-/*span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span{
+/* Fixes the bot text being waaaaaay below center */ 
+div.userInfo-2zN2z8 > div.text-37NqbO > div.discordTag-2_tqUA.nameTag-m8r81H > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span,
+div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > strong > div > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span{
   top: -4px !important;
 }
 
@@ -652,7 +662,8 @@ color: var(--secondary) !important;
 #app-mount .queryContainer-RKFJW- /* Something to do with keybinds? */,
 #app-mount .colorPickerCustom-2CWBn2/* Pick custom role color */,
 #app-mount .tierBody-16Chc9 /* Server boost modal */,
-#app-mount .powercord-toast{
+#app-mount .powercord-toast /* Powercord toasts */,
+.container-UC8Ug1 /* Create server options */{
   border-color: var(--background-secondary-alt);
 }
 
@@ -825,7 +836,6 @@ color: var(--secondary) !important;
 #app-mount .flexCenter-2Y_vCg/* Stream / Call background */,
 .modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */,
 .activityPanel-28dQGo /* Game you're playing */,
-#app-mount .uploadModal-2ifh8j /* Upload modal (top) */,
 #app-mount .footer-2gL1pp /* Bottom part of a couple pop ups like "HOLD UP this link will take you to..." */,
 #app-mount .root-1gCeng /* "What's new" */,
 #app-mount .modal-yWgWj-, .inner-1ilYF7 /* Notebook [*] */,
@@ -839,7 +849,8 @@ color: var(--secondary) !important;
 .scroller-1d5FgU /* Right side of Discover page */,
 .container-enaOkj /* Unreads page */,
 #EditUploadsCanvasWrapper /* Edit uploads main background [*] */,
-#app-mount .perksModal-fSYqOq  /* Server boost modal */{
+#app-mount .perksModal-fSYqOq  /* Server boost modal */,
+#app-mount .container-1If-HZ, .theme-dark .reactors-Blmlhw /* right side of reactions pop up */{
   background-color: var(--background-primary) ;
 }
 .tileChild-31WXi8 /* Stream has ended */,
@@ -851,7 +862,6 @@ color: var(--secondary) !important;
 .wrapper-1wyZBN, .spinner-2UBgbJ /* Loading Stream */,
 /*.activity-fViXj7 /* Activity part of user pop out */
 #app-mount .body-3iLsc4, #app-mount .footer-1fjuF6 /* Bottom part of user pop out */,
-#app-mount .footer-3mqk7D /* Upload modal (bot) */,
 .cta-3gK0Pu /* "Watch Stream" for other users in vc*/,
 .colorable-1bkp8v.primaryDark-3mSFDl /* Share Screen / Turn on camera */,
 .messageGroupWrapper-o-Zw7G /* Pinned messages */,
@@ -868,6 +878,7 @@ color: var(--secondary) !important;
 .inspector-S2gM3e /* Bottom bar */,
 #app-mount .container-3ISnnM /* Gif page */,
 #app-mount .autocomplete-1vrmpx /* Emote auto complete page */,
+#app-mount .uploadModal-2ifh8j /* Upload modal (top) */,
 .scroller-2ymjU1 /* Spectators */,
 .overflow-1ExsZm /* Spectators +X */,
 .container-3ayLPN /* Search options pop up */,
@@ -882,7 +893,8 @@ color: var(--secondary) !important;
 .message-2DieIs /* Unread mentions */,
 #EditUploadsToolbar /* Edit uploads toolbar [*] */,
 #app-mount .popout-6p6fkZ /* System popup */,
-#app-mount .tierBody-16Chc9 /* Server boost perks (bottom) */{
+#app-mount .tierBody-16Chc9 /* Server boost perks (bottom) */,
+#app-mount .scroller-1-nKid /* Left side of reactions popup */{
   background-color: var(--background-primary-alt) !important;
 }
 #app-mount .headerNormal-T_seeN /* Top part of user pop out */,
@@ -900,8 +912,10 @@ color: var(--secondary) !important;
 .footer-1kmXd4 /* Bottom part of pins popup */,
 #EditUploadsToolbar .tool:hover /* Edit uploads selected items [*] */,
 .hn-tools /* Holy notes options (needs !important) [*] */,
+#app-mount .footer-3mqk7D /* Upload modal (bottom) */,
 #app-mount .perk-2WeBWW /* Server boos text bobles at the bottom */,
-.tierMarkerSelectable-3t7r2q[style*='32, 34, 37']{
+.tierMarkerSelectable-3t7r2q[style*='32, 34, 37'] /* Forgot what this is */,
+.root-1gCeng /* Expanded user profile popup */{
   background-color: var(--background-secondary) !important;
 }
 #app-mount .option-1B5ZV8 /* "message", "user", etc bubble while using bot commands */,
@@ -916,13 +930,43 @@ color: var(--secondary) !important;
 
 /** Small details **/
 
-#app-mount .previewHover-1tGzfF, #app-mount .previewHover-1tGzfF /* Watch stream the top overlay*/ {
+/* Fixes expaned user profile popouts */
+.root-1gCeng{
+  border-radius: 8px;
+}
+
+#app-mount .previewHover-1tGzfF, #app-mount .previewHover-1tGzfF /* Watch stream the top overlay*/{
   background: rgba(20, 23, 31, 0.3);
 }
+
+/* Selected and hovered reactions in reactions popup ((!))*/
+#app-mount .reactionSelected-1pqISm{
+  background-color: rgb(0, 0, 0, .3);
+}
+#app-mount .reactionDefault-GBA58K:hover{
+  background-color: rgb(0, 0, 0, .1);
+}
+
+/* Remove reaction */
+#app-mount .remove-3V-yj8{
+  color: var(--danger);
+}
+
+#app-mount .remove-3V-yj8:hover{
+  background-color: transparent;
+  color: var(--danger);
+}
+
 /* Pin this message? is wider now */
 .messagesPopoutWrap-1MQ1bW{
   min-width: 550px;
 }
+
+/* Follow channel box */
+.wrapper-39oAo3 {
+  display: none;
+}
+
 /* Crescent Moon replacing Home icon */
 .wrapper-1BJsBx[aria-label="Home"] .childWrapper-anI2G9{
   display: none;
@@ -935,7 +979,7 @@ color: var(--secondary) !important;
     var(--gradient1),
     var(--gradient2) 130%
   );
-  -webkit-mask-image: url(https://i.imgur.com/lYXFpXr.png) !important;
+  -webkit-mask-image: url(https://i.imgur.com/lYXFpXr.png);
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -954,6 +998,92 @@ color: var(--secondary) !important;
   box-shadow: none;
 }
 
+/** Reply message background **/
+/* the little red line */
+.replying-1x3H0T:before{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,1),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.9),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.8),
+    transparent, transparent 110%);
+}
+/* Background */
+.replying-1x3H0T{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.04),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.03),
+    transparent, transparent 110%);
+}
+/* Hovered */
+.message-2qnXI6.ephemeral-1PsL1r.selected-2P5D_Z, .message-2qnXI6.replying-1x3H0T.selected-2P5D_Z, .mouse-mode.full-motion .ephemeral-1PsL1r:hover, .mouse-mode.full-motion .replying-1x3H0T:hover{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
+    transparent 110%);
+}
+
+/** Mentioned message background **/
+/* The little line at the left side */
+.mentioned-xhSam7:before{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,1),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.9),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.8),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.7),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.6),
+    transparent, transparent 110%);
+}
+/* Background */
+.mentioned-xhSam7{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.09),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.08),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.07),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.06),
+    transparent, transparent 110%);
+}
+/* Hovered */
+.message-2qnXI6.mentioned-xhSam7.selected-2P5D_Z, .mouse-mode.full-motion .mentioned-xhSam7:hover{
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    hsla(var(--secondary-hue),calc(var(--saturation-factor, 1)*100%),45%,.1),
+    transparent 110%);
+}
+
+/* Date messeage dividers */
+.group-spacing-0 .divider-3_HH5L{
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* Bigger emotes */
+.emojiSection-3Fb9ix,
+.guildSection-1EoFKd{
+  padding: 5px;
+}
+.primaryEmoji-3LinDq{
+  margin: 0;
+  width: 17rem !important;
+  height: 7rem !important;
+}
+/* custom status ones */
+.customStatus-oN4ZZY .customStatusEmoji-3a2-Zo{ 
+  width: 16.7rem !important;
+  height: 5rem !important;}
 /* Removes borders */
 .tabBarContainer-1s1u-z, .userInfoSection-2acyCx+.userInfoSection-2acyCx /* User profile black lines */,
 .powercord-toast /* Powercord Toasts */ {
@@ -994,9 +1124,67 @@ color: var(--primary);
   border: 0;
 }
 
+/** User info popup **/
+/* backgrounds */
+.headerTop-2cWpdB,
+.avatar-37jOim,
+.activity-3v9l4T,
+.aboutMeSection---MkQa,
+.body-3HBlXn,
+.footer-1N3bR3,
+.body-r6_QPy, .topSection-y3p-_D,
+.avatar-AvHqJA{
+  background-color: var(--background-secondary);
+  border-color: var(--background-secondary);
+}
+.headerTop-2cWpdB,.aboutMeTitle-2i3lnH{
+  text-align: center !important;
+}
+
+
+/* User profile popoup */
+/* Removes space when not needed */
+.body-r6_QPy{
+  height: 50% !important;
+  max-height: 100%;
+}
+
+/* Http link as red thanks to Sebon ((849616202069442572)) */
+a[href^="http://"] {
+  color: var(--danger);
+}
+
+/* Fix audio embed width to not cut off names of files thanks to  smolyoshino ((849450063871606784)) */
+.wrapperAudio-1jDe0Q {
+  width:auto!important;
+  min-width: 400px;
+}
+
+/* An "Improved" different version of mackenzie#0173's colourless embed gradient by JJ ((849214372609261588)) */
+/*@keyframes gradient { 
+  0%{background-position:150% 150%}
+  50%{background-position:75% 75%}
+  100%{background-position:0% 0%}
+}
+.embed-IeVjo6:not([style]) {
+  border-left: none;
+}
+.embed-IeVjo6:not([style])::before {
+  content: '';
+  width: 4px;
+  height: 100% !important;
+  position: absolute;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  background: linear-gradient(to bottom, var(--gradient1), var(--gradient1), var(--gradient2), var(--gradient2), var(--gradient1), var(--gradient1), var(--gradient2), var(--gradient2), var(--gradient1), var(--gradient1), var(--gradient2), var(--gradient2), var(--gradient1), var(--gradient1));
+  background-repeat: repeat;
+  background-size: 300% 300%;
+  animation: gradient 15s linear infinite;
+}
+
 /* box shadows */
 #app-mount .streamPreview-2-WUWT /* User stream preview popup */,
-.userPopout-3XzG_A /* User popup */,
+.userPopout-xaxa6l /* User popup */,
 .theme-dark .popout-6p6fkZ /* System popup */{
   box-shadow: 0px 0px 5px 0px #000;
 }
@@ -1005,18 +1193,19 @@ color: var(--primary);
   box-shadow: inset 0 0 0 2px var(--secondary), inset 0 0 0 3px #000
 }
 #app-mount .game-1ipmAa /* Activity status */{
-  box-shadow: 0 1px 0 0 #000;
+  box-shadow: 0 1px 0 0 #000
 }
 #app-mount .footer-3mqk7D /* Upload modal */{
-  box-shadow: inset 0 1px 0 #000
+  box-shadow: inset 0 1px 0 var(--background-secondary-alt)
 }
-#app-mount .uploadModal-2ifh8j /* Upload modal */{
-box-shadow: 0 0 0 1px #000, 0 2px 10px 0 #000
-}
+#app-mount .uploadModal-2ifh8j /* Upload modal */,
 #app-mount .root-1gCeng /* Create Server popup */{
-  box-shadow: 0 0 0 1px #000, 0 2px 10px 0 #000;
+box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
 }
 
+#app-mount .reactorDefault-1IUqMZ /* Reactions seprator */{
+  box-shadow: inset 0 -1px 0 var(--background-secondary-alt)
+}
 
 /* Removes the black borders from stream */
 .video-xBa92B {
@@ -1104,20 +1293,6 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 #000
   );
 }
 
-/** Blue mentions **/
- /* Normally  ((!!))
-/*.wrapper-3WhCwL{
-  color: var(--primary);
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.25s ease;
-} 
-
-/* Hovered but for colorless roles not to ovveride the "Role colors everywhere plugin" */
-/*.interactive:hover{
-  color: #fff;
-  background-color: var(--primary);
-}
-
 /* Removed the underline */
 #app-mount .mentioned-xhSam7 .mention.interactive:hover{
   text-decoration: none;
@@ -1196,6 +1371,7 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 #000
   border-radius: 5px;
 }
 
+/* removes the nitro tab from home page */
 #private-channels-2{
   display: none;
 }
@@ -1218,17 +1394,14 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 #000
 
 /* Red highlighted context option */
 .colorDanger-2qLCe1.focused-3afm-j{
-  background-color: var(--danger);
-  color: #fff !important;
+  background-color: var(--background-modifier-hover);
 }
+
 /* Widens some bars alongside the chat box */
 .messagesErrorBar-nyJGU7 /* Message failed to load */,
 .newMessagesBar-265mhP /* X New messages since Y */{
   margin: -2px -12px;
 }
-
-/*.spinner-2enMB9/* The dots thing RED, .pulsingEllipsis-3YiXRF , .inner-1gJC7_ Jump , .spinner-2enMB9 to present */
-
 
 /* Moves people in vc a litttle bit to the left */
 .listDefault-3ir5aS{
@@ -1239,12 +1412,10 @@ padding-left: 20px;
 .channelTextArea-rNsIhG /* Chat box */{ 
   margin-bottom: 0; 
 }
-.form-2fGMdU /* Edges of chat bos*/{ 
+.form-2fGMdU /* Edges of chat box*/{ 
   padding: 0 3px 0 0; 
 }
-.wrapper-39oAo3 /* Follow channel box */{
-  display: none;
-}
+
 .base-gE7OpD { /* typing and slowmode stuff */
   top: -19px; 
   left: 15px;
@@ -1256,7 +1427,7 @@ height: 24px !important;
 
 /* Moves compact mode messages a little bit tot he left */
 .compact-T3H92H .contents-2mQqc9{
-  padding-left: 3.7rem;
+  padding-left: 4rem;
 }
 
 /** "Jump to present" pill thanks to Yellowsink ((805724588277104680)) **/
@@ -1461,11 +1632,11 @@ height: 24px !important;
     order: -1;
     margin-left: 6px !important;
 }
-/* Uninstall button */
-.powercord-product-footer .lookFilled-1Gx00P.colorRed-1TFJan{
-    border-radius: 100px;
-    padding: 0 !important;
-    height: 24px !important;
+/* Uninstall and Settings(BDcompat [!]) buttons */
+.powercord-product-footer .lookFilled-1Gx00P.colorRed-1TFJan,
+div.powercord-plugin-footer.powercord-product-footer.bdc-justifystart > button.button-38aScr.lookFilled-1Gx00P.colorBrand-3pXr91.sizeSmall-2cSMqn.grow-q77ONN{
+    height:24px;
+    border-radius: 25px;
     min-height: unset !important;
     min-width: unset !important;
     padding: 0 8px !important;
@@ -1502,7 +1673,9 @@ height: 24px !important;
 /* Blue top bars */
 .colorBrand-2zeG8h/* Plugin X has an update */, 
 .notice-2X5hT5 /* Preview mode */,
-.notice-3uyY6c /* Server preview mode */{
+.notice-3uyY6c /* Server preview mode */,
+.colorInfo-2URYW5{
+  box-shadow: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Update%20Plugin.svg);
@@ -1510,6 +1683,7 @@ height: 24px !important;
 
 /* Above, but red, and for not detecing audio */
 .colorDanger-4gmAY0{
+  box-shadow: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/No%20Audio.svg);
@@ -1517,6 +1691,7 @@ height: 24px !important;
 
 /* Same as above, streaming */
 .colorStreamerMode-2SJAUN{
+  box-shadow: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Streaming.svg);
@@ -1530,7 +1705,7 @@ height: 24px !important;
 }
 
 
-/* test */
+/* test, forgot what for */
 .compact-T3H92H:not(.groupStart-23k01U) .header-23xsNx {
   margin-right: 0.25rem;
 }
@@ -1543,44 +1718,12 @@ height: 24px !important;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="540"><g transform="translate(-96 -100)" fill-rule="evenodd" fill="rgba(0,0,0,.25)"><path d="M142.836 181L285.67 323.837 142.836 466.672 0 323.836z"/><circle cx="508.5" cy="116.5" r="116.5"/><circle cx="925.5" cy="736.5" r="116.5"/><circle cx="883" cy="100" r="4"/><circle cx="859" cy="100" r="4"/><circle cx="835" cy="100" r="4"/><circle cx="811" cy="100" r="4"/><circle cx="907" cy="100" r="4"/><circle cx="931" cy="100" r="4"/><circle cx="955" cy="100" r="4"/><circle cx="883" cy="124" r="4"/><circle cx="859" cy="124" r="4"/><circle cx="835" cy="124" r="4"/><circle cx="811" cy="124" r="4"/><circle cx="907" cy="124" r="4"/><circle cx="931" cy="124" r="4"/><circle cx="955" cy="124" r="4"/><circle cx="883" cy="148" r="4"/><circle cx="859" cy="148" r="4"/><circle cx="835" cy="148" r="4"/><circle cx="811" cy="148" r="4"/><circle cx="907" cy="148" r="4"/><circle cx="931" cy="148" r="4"/><circle cx="955" cy="148" r="4"/><circle cx="883" cy="172" r="4"/><circle cx="859" cy="172" r="4"/><circle cx="835" cy="172" r="4"/><circle cx="811" cy="172" r="4"/><circle cx="907" cy="172" r="4"/><circle cx="931" cy="172" r="4"/><circle cx="955" cy="172" r="4"/><circle cx="884" cy="196" r="4"/><circle cx="860" cy="196" r="4"/><circle cx="836" cy="196" r="4"/><circle cx="812" cy="196" r="4"/><circle cx="908" cy="196" r="4"/><circle cx="932" cy="196" r="4"/><circle cx="956" cy="196" r="4"/><circle cx="884" cy="220" r="4"/><circle cx="860" cy="220" r="4"/><circle cx="836" cy="220" r="4"/><circle cx="812" cy="220" r="4"/><circle cx="908" cy="220" r="4"/><circle cx="932" cy="220" r="4"/><circle cx="956" cy="220" r="4"/><path d="M1067.836 44.622L1129.897 13l181.04 355.31-62.061 31.622c-9.473 4.826-21.065 1.06-25.892-8.413a19.25 19.25 0 0 1-.177-17.123c10.442-21.584 1.41-47.545-20.173-57.986a43.413 43.413 0 0 0-11.232-3.65l-2.326-.417c-21.265-3.82-35.407-24.156-31.588-45.42a39.12 39.12 0 0 1 4.357-12.172c10.542-18.86 3.8-42.694-15.06-53.236a39.12 39.12 0 0 0-12.171-4.356l-4.653-.836c-21.265-3.82-35.407-24.155-31.588-45.42a39.12 39.12 0 0 1 4.357-12.172c10.542-18.86 3.8-42.693-15.06-53.235a39.12 39.12 0 0 0-12.171-4.357l-2.326-.418c-10.465-1.88-17.424-11.886-15.544-22.35a19.25 19.25 0 0 1 10.207-13.75zM787 391l63 126H724zM587 547v87H244v-87z"/></g></svg>');
 }
 
-/** People doing stuff corner **/
-
-/* User playing X background */
-.topSectionPlaying-1J5E4n {
-	z-index: 1;
- background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
-	linear-gradient(to top right, var(--primary), var(--secondary)) !important;
-}
-.activity-fViXj7{
-padding-bottom: 16px;
-background-size: 100%;
-
-}
-/* User listening to Spotify  background*/
-.topSectionSpotify-1lI0-P{
-  z-index: 1;
-	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
-	linear-gradient(to top right, #1db945, var(--spotify-color) 150%)/* --spotify-color */
-}
-/* User streaming background */
-.topSectionStreaming-1Tpf5X{
-  z-index: 1;
-	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
-	linear-gradient(to top right, #593695, #8a00e6 80%)
-}
-/* Playing on Xbox Live */
-.topSectionXbox-3fWLjS{
-  z-index: 1;
-	background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Active.svg),
-	linear-gradient(to top right, #107c10, #00e68a 110%)
-}
-
 /* Gradient watermark test ((!)) */
 .wordmark-2iDDfm svg {
-  display:none
+  display: none
   }
   
-  .wordmark-2iDDfm::after {
+  .wordmark-2iDDfm:after {
       position: absolute;
       font-family: "Discordinated";
       content: "Powercord";
@@ -1592,6 +1735,9 @@ background-size: 100%;
       background: -webkit-linear-gradient(39deg, var(--primary), var(--secondary) 110% );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-  }
+}
 
-  /* Emote test */
+/* Lock test test */
+.userSettingsSecurity-3IYeMF .lockIcon-2Hj8Tq{
+  color: -webkit-linear-gradient(39deg, var(--primary), var(--secondary) 110% );
+}
