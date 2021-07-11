@@ -26,38 +26,52 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 /* Experiment Discord watermark */
 @import url("https://kckarnige.github.io/femboi_owo/discord-font.css");
 
-
 /* Variables */
 .theme-dark {
   --background-primary: rgb(25, 29, 38);
   /* Main channel chat area, Top bar, And the right side of settings */
   --background-primary-alt: rgb(20, 24, 36);
   /* Slightly darker than background-primary, will mostly be used for highlighted stuff */
-  --background-secondary: rgb(16, 18, 30);
+  --background-secondary: hsl(231, 30%, 9%);
   /* Channels / Members bar, Left side of Settings */
   --background-secondary-alt: rgb(12, 14, 19);
   /* User Area box, some stuff in settings, etc */
-  --primary: hsl(204, 100%, 45%);
+  --background-floating: #101219;
+  /* Tooltips and Server context menu, and user popups */
+  --primary: #008ae6;
   /* Main blue accent */
-  --primary2: #008ae6e6;
+  --primary2: hsla(204, 100%, 45%, 0.902);
   /* Main blue accent */
-  --primary-hue:204;
-  /* Used for mentions */
-  --secondary: hsl(156, 100%, 45%);
+  --primary-hue: 204;
+  /* Used for saturation */
+  --primary-lightness: 45%;
+  /* Used for saturation */
+  --secondary: #00e68a;
   /* Secondary accent  */
-  --secondary2: #00e68a1a;
+  --secondary2: hsla(156, 100%, 45%, 0.102);
   /* Secondary accent  */
-  --secondary-hue:156;
-  /* Used for mentions */
-  --warning: #e68a00;
+  --secondary-hue: 156;
+  /* Used for saturation options */
+  --secondary-lightness: var(--primary-lightness);
+  /* Used for saturation options */
+  --warning: hsl(36, 100%, 45%);
   /* Yellow accent */
-  --warning2: #e68a001a;
+  --warning2: hsla(36, 100%, 50%, 0.15);
   /* Yellow accent, almost transparent */
-  --danger: #e61e1e;
+  --warning-hue: 36;
+  /* Used for saturation options */
+  --warning-lightness: var(--primary-lightness);
+  /* Used for saturation options */
+  --danger: hsl(0, 80%, 45%);
   /* Red accent */
-  --danger2: #e61e1e1a;
+  --danger2: hsla(0, 80%, 51%, 0.102);
   /* Red accent, almost transparent */
+  --danger-hue: 0;
+  /* hue for saturation options */
+  --danger-lightness: var(--primary-lightness);
+  /* hue for saturation options */
   --streaming: #8a00e6;
+  /* Streaming stuff */
 }
 .theme-light {
   --background-primary: hsl(26, 23%, 15%);
@@ -78,9 +92,9 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Secondary accent, a lot more transparent */
   --warning: #e68a00;
   /* Yellow accent */
-  --warning2: #e68a001a;
+  --warning2: hsla(34, 7%, 81%, 0.102);
   /* Yellow accent, almost transparent */
-  --danger: #e61e1e;
+  --danger: rgb(230, 30, 30);
   /* Red accent */
   --danger2: #e61e1e1a;
   /* Red accent, almost transparent */
@@ -117,8 +131,6 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Window bar, Server list bar, Search date options, Active options in Settings */
   --background-accent: var(--background-mobile-primary);
   /* New unread, Boost level icon, Selected Search date option, Secondary bar above Chat box, and some stuff in Settings */
-  --background-floating: var(--background-secondary-alt);
-  /* Tooltips and Server context menu */
   --background-mobile-primary: var(--background-primary);
   /* Something something Login menu */
   --background-mobile-secondary: var(--background-primary-alt);
@@ -137,6 +149,9 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* The Scrollbar track for the above */
   --scrollbar-auto-thumb: var(--background-secondary-alt);
   /* The movable part of the Scrollbar in chat */
+  --scrollbar-auto-scrollbar-color-thumb: var(--background-secondary-alt);
+  --scrollbar-auto-scrollbar-color-track: var(--background-primary);
+  /* Some scroller bars */
   --scrollbar-auto-track: transparent;
   /* The Scrollbar track for the above */
   --deprecated-text-input-border-disabled: var(--background-secondary-alt);
@@ -151,7 +166,7 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Blue part of the gradient, change this if you don't want it to change the normal blue accent */
   --gradient2: var(--secondary);
   /* Same as above but green*/
-  --text-link: var(--primary);
+  --text-link: hsl(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),var(--primary-lightness)) !important;
   /* Links, and text inside embeds */
   --text-positive: var(--secondary);
   /* Idk where this is used exactly but it's green */
@@ -165,7 +180,7 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* yellow text in What's new page */
   --info-warning-foreground: var(--warning);
   /* Same as above */
-  --status-warning-background: var(--warning);
+  --status-warning-background: var(--warning2);
   /* Same as above */
   --info-warning-background: var(--warning2);
   /* Same as above but very transparent */
@@ -203,22 +218,49 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
   /* Same as above but a bit darker */
   --brand-experiment-600: var(--background-modifier-active) !important;
   /* Another blurple it's a little darker, used when clicking on an option */
+  --elevation-low: 0 1px 0 rgba(0,0,0,0.2),0 1.5px 0 rgba(0,0,0,0.05),0 2px 0 rgba(4,4,5,0.05);
+  /* Box shadow stuff for later ((!)) */
 }
 
+/* Animation stuff  */
+@keyframes UnderLinesR {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes UnderLinesL {
+  0%{background-position:86% 0%}
+  50%{background-position:15% 100%}
+  100%{background-position:86% 0%}
+}
+@keyframes ServerPills {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@keyframes buttons {
+    0%{background-position:1% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:1% 0%}
+}
+@-webkit-keyframes Watermark {
+  0%{background-position:1% 0%}
+  50%{background-position:99% 100%}
+  100%{background-position:1% 0%}
+}
 /* Gradient Buttons {S} */
 .lookFilled-1Gx00P.colorBrand-3pXr91 /* Change password / View Backup codes */,
 #app-mount .lookFilled-1Gx00P.colorGrey-2DXtkV /* Most buttons in settings */,
 #app-mount .lookFilled-1Gx00P.colorPrimary-3b3xI6 /* NSFW Warning "Nope" */,
 #app-mount .watchButton-2SbJEo /* Watch Stream */,
-.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request", "Enable all" */,
 .button-3HqqDX /* Close stream */,
 .lookFilled-1Gx00P.colorBrand-3pXr91:disabled /* bdCompat disabled buttons */,
-.lookFilled-1Gx00P.colorGreen-29iAKY:disabled /* "Subscribe" / "Submit" after reading server rules*/,
 #app-mount .lookGhost-2Fn_0-.colorGrey-2DXtkV /* "Browse" for one of lighty's plugin [*] */,
 #app-mount .lookOutlined-3sRXeN.colorPrimary-3b3xI6 /* White buttons somewhere? */,
 .buttonColor-2Nx30V /* Invite to stream */,
 .lookOutlined-3sRXeN.colorBrand-3pXr91 /*another toast button*/,
-.lookOutlined-3sRXeN.colorWhite-rEQuAQ /* Join server X / "<-- Back" */{
+.lookOutlined-3sRXeN.colorWhite-rEQuAQ /* Join server X / white buttons in Preview modes*/,
+#app-mount .lookFilled-1Gx00P.colorTransparent-1ewNp9{
   background-color: var(--background-secondary);
   border: 1px solid var(--primary);
   border-radius: 5px;
@@ -227,7 +269,6 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 
 /* When hovered {S} (also used for selected stuff) */
 .lookFilled-1Gx00P.colorBrand-3pXr91:hover /* Change password / View Backup codes */,
-.lookFilled-1Gx00P.colorGreen-29iAKY:hover /* "Send Friend Request", "Enable all" */,
 #app-mount .lookFilled-1Gx00P.colorGrey-2DXtkV:hover /* Most buttons in settings */,
 #app-mount .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover /* NSFW Warning "Nope" */,
 #app-mount .watchButton-2SbJEo:not([disabled]):hover /* Watch Stream */,
@@ -245,25 +286,46 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ/* Selected option in Friends page*/,
 .categoryPill-34fszg.selected-1dONk0 /* Selected option in discovery page */,
 .tab-2j5AEF.selected-2LAck8 /* "Old" / "New" / "Relevant" in search */
-/* Joined server */{
+/* Joined server */,
+#app-mount .lookFilled-1Gx00P.colorTransparent-1ewNp9:hover{
   color: #fff;
   border-color: transparent;
-  background-color: var(--primary);
-  background-image: linear-gradient(
+  background: linear-gradient(
     to right,
     var(--gradient1),
-    var(--gradient2)
-  130% );
-  background-position: center;
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2));
   text-shadow: 0px 1px 1px #000;
-  background-size: 115% 115%;
+  background-size: 5000% 1000%;
+  animation: buttons 200s ease infinite;
 }
-
-
 
 /* Green buttons */
 .lookOutlined-3sRXeN.colorGreen-29iAKY /* Most green buttons (invite to server, etc), also for toasts */,
 #app-mount .button-2DhvE9 /* "Join Server" button after successfully connecting Powercord */,
+.lookFilled-1Gx00P.colorGreen-29iAKY /* "Send Friend Request", "Enable all", "Update now" */,
+.lookFilled-1Gx00P.colorGreen-29iAKY:disabled /* "Subscribe" / "Submit" after reading server rules*/,
 .lookInverted-2D7oAl.colorGreen-29iAKY /* Send message */{
   background-color: var(--background-secondary);
   border: 1px solid var(--secondary);
@@ -273,6 +335,7 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 /* When hovered */
 .lookOutlined-3sRXeN.colorGreen-29iAKY:hover /* Most green buttons (invite to server, etc), also for toasts */,
 #app-mount .button-2DhvE9:hover /* "Join Server" button after successfully connecting Powercord */,
+.lookFilled-1Gx00P.colorGreen-29iAKY:hover /* "Send Friend Request", "Enable all" */,
 .lookInverted-2D7oAl.colorGreen-29iAKY:hover /* Send message */{
   color: #fff;
   border-color: transparent;
@@ -285,7 +348,8 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 
 /* Yellow buttons */
 .lookFilled-1Gx00P.colorYellow-2JqYwt /* Most yellow buttons "Pause Updates" */,
-#app-mount .lookOutlined-3sRXeN.colorGrey-2DXtkV/* Toast's "Postpone" */ {
+#app-mount .lookOutlined-3sRXeN.colorGrey-2DXtkV/* Toast's "Postpone" */,
+.formNotice-2_hHWR.cardWarning-2yPNAa.card-3Qj_Yx > div > div > div > button /* Reload discord */{
   background-color: var(--background-secondary);
   border: 1px solid var(--warning);
   border-radius: 5px;
@@ -293,7 +357,8 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 }
 /* When hovered */
 .lookFilled-1Gx00P.colorYellow-2JqYwt:hover /* Most yellow buttons "Pause Updates" */,
-.lookOutlined-3sRXeN.colorGrey-2DXtkV:hover /* Toast's "Postpone" */{
+.lookOutlined-3sRXeN.colorGrey-2DXtkV:hover /* Toast's "Postpone" */,
+.formNotice-2_hHWR.cardWarning-2yPNAa.card-3Qj_Yx > div > div > div > button:hover /* Reload discord */{
   color: #fff;
   border-color: transparent !important;
   background-color: var(--primary);
@@ -344,12 +409,17 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
     to bottom right,
     rgba(150, 10, 10),
     var(--danger),
-    rgba(150, 10, 10)
-  );
-  background-position: center;
-  background-repeat: no-repeat;
+    rgba(150, 10, 10),
+    var(--danger),
+    rgba(150, 10, 10),
+    var(--danger),
+    rgba(150, 10, 10),
+    var(--danger),
+    rgba(150, 10, 10),
+    var(--danger));
   text-shadow: 0px 1px 1px #000;
-  background-size: 115% 115%;
+  background-size: 4000% 1000%;
+  animation: buttons 100s ease infinite;
 }
 
 /** Makes stuff blue **/
@@ -362,7 +432,9 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .hn-tool-expand .hn-expand-icon:hover /* Holy note's isolate message [*] */,
 #app-mount .headerLogo--hLLAk /* "SERVER BOOST" in the server boost modal */,
 #app-mount .categoryText-2-8pr /* Forgot what this does */,
-#app-mount .improved-1NJK-y /* "Improved" section in the what's new pop up */{
+#app-mount .improved-1NJK-y /* "Improved" section in the what's new pop up */,
+.powercord-badge /* Powercord badges */,
+.notebook-flex .help-icon /* Holy notes Help icon */{
   color: var(--primary) !important;
 }
 .iconBadge-qZ4Ksk /* Pin mark*/,
@@ -370,7 +442,9 @@ stuff with ((!)) are for me to fix later, while the ones with a number inside th
 .unread-1xRYoj /* "NEW UNREADS" bubble in channel list */,
 .barFill-23-gu- /* Blurple bar in context menu */,
 .container-3auIfb:not([style*="218"])/* Settings pills */,
-.mediaBarGrabber-1FqnbN, .mediaBarProgress-1xaPtl, .mediaBarProgress-1xaPtl:after, .mediaBarProgress-1xaPtl:before /* Embeded video's blurple bars */{
+.mediaBarGrabber-1FqnbN, .mediaBarProgress-1xaPtl, .mediaBarProgress-1xaPtl:after, .mediaBarProgress-1xaPtl:before /* Embeded video's blurple bars */,
+.item-2hkk8m /* Unread server pins */,
+.unread-2lAfLh /* Unread channels */{
   background-color: var(--primary) !important; 
 }
 svg.slider-TkfMQL svg /* i forgot what this one does */{
@@ -398,7 +472,8 @@ svg.slider-TkfMQL svg /* i forgot what this one does */{
 .attachButtonPlay-3iJ0mf /* Invite to game */,
 .fa-check-circle:before /* Toasts "Success" icon */,
 .defaultValue-3gC7yw .markValue-2DwdXI /* Default numbers in settings */,
-.actionButton-uPB8Fs.actionAccept-LV-szU:hover > svg > path{
+.actionButton-uPB8Fs.actionAccept-LV-szU:hover > svg > path,
+.minorAction-OVxOke /* "Trust this Domain" */{
   color: var(--secondary) !important;
 }
 .updateIconForeground-3tnNZn /* "Update Ready!" */ {
@@ -463,11 +538,8 @@ color: rgb(255, 40, 40) !important;
 /*** Log-IN page ***/
 
 /* Log-in box background */
-#app-mount.authBox-hW6HRx{
+#app-mount .authBox-hW6HRx{
  background: var(--background-primary);
-  position: absolute;
-  top: 315px;
-  right: 110px;
 }
 
 /* login blurple text */
@@ -507,7 +579,6 @@ color: rgb(255, 40, 40) !important;
 .platform-win .scroller-1Bvpku /* Server list background */,
 .container-3baos1 /* User avatar box */,
 .peopleColumn-29fq28 /* Add friends */,
-.input-2VB9rf /* search friends text box */,
 ::placeholder, body, button, input, select, textarea /* backdrop of discord? ((!)) */,
 .callContainer-36WRfH, .centerControls-2E5oVA /* DM call background */{
   background-color: var(--background-primary);
@@ -533,8 +604,15 @@ color: rgb(255, 40, 40) !important;
 }
 
 
+.input-2VB9rf /* search friends text box */{
+  background-color: hsla(0, 0%, 0%, 0.3) !important;
+}
+.searchInput-5YMkDH, .textarea-2r0oV8, .textarea-2r0oV8::placeholder{
+  background: transparent !important;
+}
+
 .side-8zPYf6 .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ, .topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ,.selected-aXhQR6 .layout-2DM8Md, .clickable-1JJAn8:hover .layout-2DM8Md,.modeSelected-346R90 .content-1x5b-n, .modeSelected-346R90:hover .content-1x5b-n, .wrapper-2jXpOf:hover .content-1x5b-n,.clickable-25tGDB .header-2V-4Sw:hover, .selected-31Nl7x .header-2V-4Sw /* for whatever reason the "dark" side bar in light mode doesn't accept the variables in root for modifiers */{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 .searchBar-6Kv8R2 .searchBarComponent-32dTOx /* same as above, but for finding conversations */{
   background-color: var(--background-secondary-alt);
@@ -550,11 +628,10 @@ color: rgb(255, 40, 40) !important;
   display: none;
 }
 /* "Add friend" */
-.tabBar-ZmDY9v .item-3HknzM[style*='59, 165, 92'] {
-  background-color: var(--secondary) !important;
-  color: rgba(230, 230, 230, 1) !important;
+.tabBar-ZmDY9v .item-3HknzM[style*='0'] {
+  background-color: hsl(var(--secondary-hue), calc(var(--saturation-factor, 1) * 47.3%), var(--secondary-lightness))!important;
 }
-.tabBar-ZmDY9v .item-3HknzM[style*='59, 165, 92, 0.2'] {
+.tabBar-ZmDY9v .item-3HknzM[style*='']{
 background-color: var(--secondary2) !important;
 color: var(--secondary) !important;
 }
@@ -569,34 +646,28 @@ color: var(--secondary) !important;
   width: 530px;
 }
 
-/* Fixes the bot text being waaaaaay below center */ 
-div.userInfo-2zN2z8 > div.text-37NqbO > div.discordTag-2_tqUA.nameTag-m8r81H > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span,
-div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > strong > div > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span{
+/* Fixes the bot tag text being waaaaaay below center */ 
+.discordTag-2_tqUA.nameTag-m8r81H > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span,div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > strong > div > span.bot-2Fta1w.botTagRegular-2HEhHi.botTag-2WPJ74.px-10SIf7 > span{
   top: -4px !important;
 }
 
 /* ################################################################################################################################## */
 /*** Settings page ***/
 
-/** Backgrounds **/
+/** Backgrounds .content-mK72R6 **/
 
 .avatarUploaderInner-2EvNMg /* Profile Picture */,
 .appMount-3lHmkl, body /* Discord's farthest background */,
 .sidebarRegionScroller-3MXcoP /* Left side */,
-.background-1QDuV2 /* "MY ACCOUNT" box */,
-.header-1TKi98 /* Leave 'Group DM' */,
-.content-mK72R6 /* Text under the above */,
-.content-1LAB8Z /* "How'd the stream go?" */,
 .searchResultsWrap-3-pOjs /* Search background */,
 .channelName-1JRO3C /* Search headers */,
 .searchHeader-2XoQg7 /* Main search header */ {
   background-color: var(--background-primary);
 }
-.fieldList-21DyL8 /* Personal info box */,
+.background-1QDuV2,.fieldList-21DyL8 /* Personal info */,
 .cardPrimaryOutline-29Ujqw /* Authorized apps */,
 .accountList-33MS45 /* Connected accounts */,
 .outer-1AjyKL,.cardWrapper-2Min21 /* Recommended servers to boost */,
-#app-mount .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /* Video setting's camera photo */,
 .cardPrimaryEditable-3KtE4g /* Client's status display [*] */,
 #app-mount .codeRedemptionRedirect-1wVR4b /* Redeem a Discord key text box */ ,
 .message-1Ng5AR /* Search results */,
@@ -606,15 +677,17 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 #app-mount .colorPickerCustom-2CWBn2 /* Pick Custom role color */,
 #app-mount .autocompleteArrow-Zxoy9H /* Idk, but it has the same color as what's below */,
 #app-mount .header-2bNvm4 /* Add Role / Member top */,
-#app-mount .container-VSDcQc .sectionTag-pXyto9 /* /* Add Role / Member bottom */{
+#app-mount .container-VSDcQc .sectionTag-pXyto9 /* /* Add Role / Member bottom */,
+.theme-dark .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC,.theme-light .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC /*((!))*/,
+#app-mount .tierBody-3aUxuc /* Buy sticker level */{
   background-color: var(--background-primary-alt);
 }
 .radioBar-bMNUI-:hover /* settings options */,
 #app-mount .bar-2Qqk5Z /* gray bars */,
-.css-1ba14n5-option /* Camera options but hovered */ {
+.css-1ba14n5-option /* Camera options but hovered */,
+.tierHeaderContent-3t3DoO /* Sticker levels */{
   background-color: var(--background-secondary);
 }
-
 .cardPrimary-1Hv-to /* Check out ToS box */,
 .accountBtn-2Nozo3 .accountBtnInner-sj5jLs /* Sites in connected accounts */,
 #app-mount .gemIndicatorContainer-2jdECl /* Boost level of recommended servers */,
@@ -623,11 +696,12 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 .container-_phMUq:hover /* Default permissions */{
   background-color: var(--background-secondary-alt);
 }
-
 .disabled-3I9jyo /* The disabled option for Overlay */ {
   color: var(--background-secondary-alt);
 }
-
+.accountProfileCard-1XCH88 /* User info that looks like user popups*/{
+  background-color: var(--background-floating);
+}
 .item-26Dhrx:hover:not([aria-checked=true]) /* Forces the hover value to be used for sticker animation options, Input mode, etc... */,
 .bsi-settings-card:hover {
   background-color: rgba(12, 14, 19, 0.5);
@@ -637,7 +711,36 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
   background-color: rgba(12, 14, 19, 0.7);
 }
 
+/* Selected nitro tab */
+.premiumTabItem-1QTfBr[aria-selected=true],
+#app-mount .feature-2w65J5{
+  background: linear-gradient(to right, #a764ed, #e292aa);
+}
+.premiumTabItem-1QTfBr[aria-selected=true]:after{
+ display: none;
+}
+
 /** Small details **/
+
+/* Overlay notifs */
+/* Disabled */
+.selected-mKYnfr.disabled-3I9jyo{
+  color: hsl(var(--danger-hue),calc(var(--saturation-factor, 1)*80%),var(--danger-lightness));
+}
+.disabled-3I9jyo:hover{
+  color: hsl(var(--danger-hue),calc(var(--saturation-factor, 1)*80%),var(--danger-lightness));
+}
+.wrapper-3jrx9n.disabledSelected-2Kf0yZ{
+  border-color: hsl(var(--danger-hue),calc(var(--saturation-factor, 1)*80%),var(--danger-lightness));
+}
+/* Better nitro page image positions */
+.featureBadge-3ZA-Ca .featureImage-2L9kA0,.featurePremiumGuild-2KpCr6 .featureImage-2L9kA0{
+  margin-bottom: -1px !important;
+}
+.hero-EvfTTA,.tier2-3hSil0.banner-3Kac2g{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* "Remove" text in "My Account" box */
 #app-mount .lookLink-9FtZy-.colorPrimary-3b3xI6 {
@@ -663,13 +766,17 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 #app-mount .colorPickerCustom-2CWBn2/* Pick custom role color */,
 #app-mount .tierBody-16Chc9 /* Server boost modal */,
 #app-mount .powercord-toast /* Powercord toasts */,
-.container-UC8Ug1 /* Create server options */{
+.container-UC8Ug1 /* Create server options */,
+#app-mount .userSettingsVoice-iwdUCU .previewOverlay-2O7_KC{
   border-color: var(--background-secondary-alt);
 }
-
+.cardWarning-2yPNAa, .cardWarningOutline-1cs56O{
+  border-color: var(--warning);
+}
 /* A common page used by almost everything in settings */
 .contentColumnDefault-1VQkGM{
-  max-width: 1516px; 
+  width: 100%;
+  max-width: 1500px;
   padding: 5px 50px; /* Removes useless padding */
 }
 
@@ -829,16 +936,37 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 
 /** Backgrounds .wrapper-2qzCYF.fullScreen-1tMzXY, .wrapper-2qzCYF.noChat-18KtBD (.wrapper-2qzCYF black shadow) **/
 
+/** Unused for now .modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */
+ /*.content-1LAB8Z /* "How'd the stream go?" */
+/* #app-mount .footer-2gL1pp /* Bottom part of a couple pop ups like "HOLD UP this link will take you to..." */
+
+/* notification annoyances */
+.unreadMentionsBar-1VrBNe,
+.unreadMentionsIndicatorBottom-BXS58x,
+.channelNotice-1-XFjC,
+.muted-1NRuDm{
+background-color: var(--danger);}
+
+/* self explanatory stuff */
+.cozy-3raOZG .timestamp-3ZCmNB.alt-1uNpEt,
+.button-38aScr[aria-label="Open GIF picker"],
+.button-38aScr[aria-label="Send a gift"],
+.button-38aScr[aria-label="Open sticker picker"],
+.iconItem-F7GRxr[aria-label="Create Invite"],
+.navItem-3Wp_oJ#gif-picker-tab,
+.navItem-3Wp_oJ#sticker-picker-tab,
+.labelContainer-1BLJti#message-tts,
+.labelContainer-1BLJti#user-context-invite-to-server,
+.labelContainer-1BLJti#guild-header-popout-invite-people
+{display:none!important;}
+
+
 .container-3w7J-x /* Channels bar */,
 .clickable-25tGDB /* Server title above channels */,
 .members-1998pB, .members-1998pB>div /* Role Title, Users bar */,
 .container-1giJp5 /* Voice connected box */,
 #app-mount .flexCenter-2Y_vCg/* Stream / Call background */,
-.modalContent-1T1Tix /* Top part of "HOLD UP this link will take you to..."  */,
 .activityPanel-28dQGo /* Game you're playing */,
-#app-mount .footer-2gL1pp /* Bottom part of a couple pop ups like "HOLD UP this link will take you to..." */,
-#app-mount .root-1gCeng /* "What's new" */,
-#app-mount .modal-yWgWj-, .inner-1ilYF7 /* Notebook [*] */,
 .header-ykumBX /* Pins header */,
 .messagesPopoutWrap-1MQ1bW /* Pins pop out */,
 .video-8eMOth /*embeded videos*/,
@@ -894,7 +1022,12 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 #EditUploadsToolbar /* Edit uploads toolbar [*] */,
 #app-mount .popout-6p6fkZ /* System popup */,
 #app-mount .tierBody-16Chc9 /* Server boost perks (bottom) */,
-#app-mount .scroller-1-nKid /* Left side of reactions popup */{
+#app-mount .scroller-1-nKid /* Left side of reactions popup */,
+.form-26zE04/* HOLD UP popup (top) */,
+.root-1gCeng /* a lot of popups (top) */,
+#app-mount .modal-yWgWj-, .inner-1ilYF7 /* Notebook [*] */,
+#app-mount .wrapper-1GJGVj /* No emoji matches your results */,
+.content-1LAB8Z /* Complete a few steps before joining the server */{
   background-color: var(--background-primary-alt) !important;
 }
 #app-mount .headerNormal-T_seeN /* Top part of user pop out */,
@@ -915,29 +1048,52 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 #app-mount .footer-3mqk7D /* Upload modal (bottom) */,
 #app-mount .perk-2WeBWW /* Server boos text bobles at the bottom */,
 .tierMarkerSelectable-3t7r2q[style*='32, 34, 37'] /* Forgot what this is */,
-.root-1gCeng /* Expanded user profile popup */{
+.footer-2gL1pp /* HOLD UP popup bottom */{
   background-color: var(--background-secondary) !important;
 }
 #app-mount .option-1B5ZV8 /* "message", "user", etc bubble while using bot commands */,
 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9, .wrapper-1BJsBx:hover .childWrapper-anI2G9 /* Servers without a pic (hovered / selected) */,
-::placeholder, input, select, textarea/* User popout text */,
 #EditUploadsToolbar .selected .tool /* Edit uploads selected items [*] */,
 #app-mount .tierHeaderLocked-1s2JJz /* Locked server boost rank */,
 #app-mount .barBackground-2EEiLw /* Server boost line */,
-#app-mount .tierMarkerBackground-3q29am /* Server boost circles */{
+#app-mount .tierMarkerBackground-3q29am /* Server boost circles */,
+.input-2_SIlA,::placeholder, input, select, textarea/* User popout message user text box */,
+.input-cIJ7To /* Change nickname text box */{
   background-color: var(--background-secondary-alt) !important;
 }
 
 /** Small details **/
 
-/* Fixes expaned user profile popouts */
-.root-1gCeng{
-  border-radius: 8px;
+/* Fixes server popup radiouses */
+.focusLock-Ns3yie, .root-1gCeng{
+  border-radius: 8px !important;
 }
 
+/* Better user popups */
+.textarea-2r0oV8, .textarea-2r0oV8::placeholder, input, select, textarea/* note text background */{
+  background-color: transparent !important;
+}
+/* puts shit in the center */
+.headerTag-3GFl76 /* Tags */,
+.nickname-3M3Jfa /* Nicknames */,
+.aboutMeSection-1Fw5Ia .aboutMeBody-3GuvKk /* About me text */,
+.customStatusText-1vtUsN /* Custom status */{
+  display: block;
+  text-align: center !important;
+}
+/* Fixes expaned user profile popouts */
+.root-1gCeng,.form-26zE04,.body-r6_QPy{
+  border-radius: 0 0 8px 8px ;
+}
+.profileBanner-33-uE1{
+  border-radius: 8px 8px 0 0 ;
+}
 #app-mount .previewHover-1tGzfF, #app-mount .previewHover-1tGzfF /* Watch stream the top overlay*/{
   background: rgba(20, 23, 31, 0.3);
 }
+/* Makes the height the same for all pages of user info (they're blocked anyway, might as well shorten it, making it transparent will mess with a lot of other popups) */
+
+/* ((!)) */
 
 /* Selected and hovered reactions in reactions popup ((!))*/
 #app-mount .reactionSelected-1pqISm{
@@ -991,7 +1147,7 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 }
 
 /* Removes box shadows */
-#app-mount .footer-2gL1pp /* Upload box */,
+#app-mount .footer-2gL1pp /* Bottom of a bunch of popup boxes */,
 #app-mount .header-1TOWci /* Gif page */,
 #app-mount .elevationBorderHigh-2WYJ09 /* Search pop up */,
 #app-mount .separator-2-RRj_,.theme-light .modal-yWgWj- /* Notebook [*] */{
@@ -1000,7 +1156,7 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 
 /** Reply message background **/
 /* the little red line */
-.replying-1x3H0T:before{
+.replying-1x3H0T:before,.ephemeral-1PsL1r:before{
   background: linear-gradient(
     to bottom,
     hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,1),
@@ -1009,7 +1165,7 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
     transparent, transparent 110%);
 }
 /* Background */
-.replying-1x3H0T{
+.replying-1x3H0T,.ephemeral-1PsL1r{
   background: linear-gradient(
     to bottom,
     hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
@@ -1018,7 +1174,7 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
     transparent, transparent 110%);
 }
 /* Hovered */
-.message-2qnXI6.ephemeral-1PsL1r.selected-2P5D_Z, .message-2qnXI6.replying-1x3H0T.selected-2P5D_Z, .mouse-mode.full-motion .ephemeral-1PsL1r:hover, .mouse-mode.full-motion .replying-1x3H0T:hover{
+.message-2qnXI6.ephemeral-1PsL1r.selected-2P5D_Z, .message-2qnXI6.replying-1x3H0T.selected-2P5D_Z, .mouse-mode.full-motion .ephemeral-1PsL1r:hover, .mouse-mode.full-motion .replying-1x3H0T:hover,.ephemeral-1PsL1r:hover{
   background: linear-gradient(
     to bottom,
     hsla(var(--primary-hue),calc(var(--saturation-factor, 1)*100%),45%,.05),
@@ -1073,13 +1229,14 @@ div.reactors-Blmlhw.thin-1ybCId.scrollerBase-289Jih.fade-2kXiP2 > div > div > st
 /* Bigger emotes */
 .emojiSection-3Fb9ix,
 .guildSection-1EoFKd{
-  padding: 5px;
+  padding: 8px;
 }
 .primaryEmoji-3LinDq{
-  margin: 0;
+  margin: auto;
   width: 17rem !important;
   height: 7rem !important;
 }
+
 /* custom status ones */
 .customStatus-oN4ZZY .customStatusEmoji-3a2-Zo{ 
   width: 16.7rem !important;
@@ -1122,31 +1279,6 @@ color: var(--primary);
 .activityPanel-28dQGo{
   padding: 0 0 5px 0;
   border: 0;
-}
-
-/** User info popup **/
-/* backgrounds */
-.headerTop-2cWpdB,
-.avatar-37jOim,
-.activity-3v9l4T,
-.aboutMeSection---MkQa,
-.body-3HBlXn,
-.footer-1N3bR3,
-.body-r6_QPy, .topSection-y3p-_D,
-.avatar-AvHqJA{
-  background-color: var(--background-secondary);
-  border-color: var(--background-secondary);
-}
-.headerTop-2cWpdB,.aboutMeTitle-2i3lnH{
-  text-align: center !important;
-}
-
-
-/* User profile popoup */
-/* Removes space when not needed */
-.body-r6_QPy{
-  height: 50% !important;
-  max-height: 100%;
 }
 
 /* Http link as red thanks to Sebon ((849616202069442572)) */
@@ -1199,17 +1331,33 @@ a[href^="http://"] {
   box-shadow: inset 0 1px 0 var(--background-secondary-alt)
 }
 #app-mount .uploadModal-2ifh8j /* Upload modal */,
-#app-mount .root-1gCeng /* Create Server popup */{
+#app-mount .root-1gCeng /* a lot of pop ups */{
 box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
 }
-
 #app-mount .reactorDefault-1IUqMZ /* Reactions seprator */{
   box-shadow: inset 0 -1px 0 var(--background-secondary-alt)
+}
+#app-mount .message-2qRu38 /* Pin it. Pin it Good */{
+  box-shadow: 0 0 0 1px var(--background-secondary), 0 2px 10px 0 rgb(0 0 0 / 20%);
 }
 
 /* Removes the black borders from stream */
 .video-xBa92B {
   background-color: transparent;
+}
+
+/* Holy notes sorting buttons */
+#app-mount .lookFilled-1Gx00P.colorTransparent-1ewNp9{
+ margin: 0 2px;
+}
+.sort-button-text,.sort-button-icon{
+  padding: 0 5px !important
+}
+.top-28JiJ- .selected-3s45Ha.themed-OHr7kt.item-PXvHYJ, .top-28JiJ- .themed-OHr7kt.item-PXvHYJ:active{
+  border-bottom-color: var(--primary);
+}
+button.sort-button-icon.button-38aScr.lookFilled-1Gx00P.colorTransparent-1ewNp9.sizeMedium-1AC_Sl.grow-q77ONN > div > div > div{
+  height: 24px;
 }
 
 /* Spoiler Check ((!)) */
@@ -1318,7 +1466,34 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
   bottom: 0;
   left: 0;
   position: absolute;
-  background-image: linear-gradient(to right, var(--primary), var(--secondary));
+  background: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2));
+  animation: UnderLinesR 200s ease infinite;
+  background-size: 5000px 5000px;
   transform: translateX(110%);
   transition: all 0.26s ease;
 }
@@ -1341,8 +1516,34 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
   bottom: 0;
   left: 0;
   position: absolute;
-  background-image: linear-gradient(to right, var(--primary), var(--secondary));
-  transform: translateX(-110%);
+  background: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1),
+    var(--gradient2));
+  animation: UnderLinesL 200s ease infinite;
+  background-size: 5000px 5000px;  transform: translateX(-110%);
   transition: all 0.26s ease;
 }
 .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after /* Selected channel */,
@@ -1365,7 +1566,7 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
 }
 
 /* Unknown game icon */
-#app-mount > div.app-1q1i1E > div > div.layers-3iHuyZ.layers-3q14ss > div > div > div > div > div.sidebar-2K8pFh > section > div.panel-24C3ux.activityPanel-28dQGo > div > div.gameWrapper-1jIQAX > div.gameIconWrapper-1YByCI > svg {
+.gameIconWrapper-1YByCI > svg {
   color: var(--background-secondary-alt) ;
   background: #faa61a ;  /*#faa61a*/
   border-radius: 5px;
@@ -1397,10 +1598,15 @@ box-shadow: 0 0 0 1px #000, 0 2px 10px 0 var(--background-secondary-alt)
   background-color: var(--background-modifier-hover);
 }
 
-/* Widens some bars alongside the chat box */
-.messagesErrorBar-nyJGU7 /* Message failed to load */,
-.newMessagesBar-265mhP /* X New messages since Y */{
+/* Widens and thinners some bars alongside the chat box and the top */
+.barBase-1c2Rfb{
   margin: -2px -12px;
+  min-height: 20px !important;
+  height: 20px;
+}
+.clipContainer-eeROt0 /* Replying box */{
+ height: 27px;
+ padding-top: 0;
 }
 
 /* Moves people in vc a litttle bit to the left */
@@ -1417,7 +1623,7 @@ padding-left: 20px;
 }
 
 .base-gE7OpD { /* typing and slowmode stuff */
-  top: -19px; 
+  top: -21px; 
   left: 15px;
   height: 23px !important; /* height is 24px */
 }
@@ -1425,25 +1631,52 @@ padding-left: 20px;
 height: 24px !important;
 }
 
-/* Moves compact mode messages a little bit tot he left */
-.compact-T3H92H .contents-2mQqc9{
-  padding-left: 4rem;
+/* Removes the reminder to se slash commands */
+.applicationCommandEducationFadeIn-1g7fXy{
+  display: none;
 }
 
-/** "Jump to present" pill thanks to Yellowsink ((805724588277104680)) **/
-.jumpToPresentBar-G1R9s6 .barButtonMain-3K-jeJ { display: none; }
-.jumpToPresentBar-G1R9s6 {
-    display: block;
-    background-color: transparent;
-    right: 12px;
-}
-.jumpToPresentBar-G1R9s6 .barButtonAlt-mYL1lj, .spinner-2enMB9 {
-    float: right;
-    bottom: .7rem;
-    right: -.5rem;
+/** "Jump to present" **/
+div.jumpToPresentBar-G1R9s6.barBase-1c2Rfb>button.barButtonAlt-mYL1lj.barButtonBase-2uLO1z {
+  top: -11px;
+  right: -12px;
 }
 
-/** better Unread mentions ((!)) **/
+/* Viewing older messages */
+div.jumpToPresentBar-G1R9s6.barBase-1c2Rfb>button.barButtonMain-3K-jeJ.barButtonBase-2uLO1z {
+  display: none;
+}
+
+/* Thinner replying box */
+
+/* Reply bubble */
+.replyBadge-r1su3o{
+  background-color: var(--background-primary-alt);
+  color: var(--primary2) !important
+}
+.repliedMessage-VokQwo:before{
+  border-color: var(--primary2) !important
+}
+/* Jump to present pill thanks to Yellowsink ((805724588277104680)) */
+.jumpToPresentBar-G1R9s6{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  left: unset;
+  background-color: transparent;
+  right: 16px;
+} 
+.jumpToPresentBar-G1R9s6 .spinner-2enMB9 {
+  padding-bottom: 11px;
+}
+
+.jumpToPresentBar-G1R9s6 .barButtonAlt-mYL1lj {
+  float: right;
+  bottom: 1.6rem;
+  border-radius: 0.7rem 0 0 0.7rem;
+  background-color: transparent;
+}
+/** better Unread mentions note: "Unreads" page has been removed for being literally useless ((!)) **/
 /* Makes them a little bit thinner and longer */
 .container-3iAQ-0{
   padding: 0 0 0 10px;
@@ -1488,6 +1721,10 @@ height: 24px !important;
 }
 .message-2g38UB{
   padding: 0 0 5px 65px !important;
+}
+
+.channelHeader-3Gd2xq{
+width: 522px !important;
 }
 
 /** Wider search results section thanks to Robzyy ((755531385090998364)) **/
@@ -1667,50 +1904,15 @@ div.powercord-plugin-footer.powercord-product-footer.bdc-justifystart > button.b
   color: #fff;
 }
 
-
-/** Waves **/ /* .notice-3bPHh- is the green top bar when powercord is plugged correctly */
-
-/* Blue top bars */
-.colorBrand-2zeG8h/* Plugin X has an update */, 
-.notice-2X5hT5 /* Preview mode */,
-.notice-3uyY6c /* Server preview mode */,
-.colorInfo-2URYW5{
-  box-shadow: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Update%20Plugin.svg);
-}
-
-/* Above, but red, and for not detecing audio */
-.colorDanger-4gmAY0{
-  box-shadow: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/No%20Audio.svg);
- }
-
-/* Same as above, streaming */
-.colorStreamerMode-2SJAUN{
-  box-shadow: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Streaming.svg);
- }
-
-
-/* Test for the server boost backgrond*/
-#app-mount .ctaBar-2UsjF2{
-  background-image: url(https://discordapp.com/assets/94ff6fdc535b6ecb7b1bc54f2dd56a10.svg);
-  stroke-width: 10px;
-}
-
-
-/* test, forgot what for */
+/* Better compact mode messages thanks to mac */
 .compact-T3H92H:not(.groupStart-23k01U) .header-23xsNx {
   margin-right: 0.25rem;
 }
 .compact-T3H92H:not(.groupStart-23k01U) .headerText-3Uvj1Y {
   display: none;
+}
+.repliedMessage-VokQwo:before{
+  fill: var(--primary) !important;
 }
 
 /* Follow channel popup topbar */
@@ -1732,12 +1934,213 @@ div.powercord-plugin-footer.powercord-product-footer.bdc-justifystart > button.b
       line-height: 20px;
       left: 2px;
       top: 1px;
-      background: -webkit-linear-gradient(39deg, var(--primary), var(--secondary) 110% );
+      background: -webkit-linear-gradient(39deg, 
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2),
+      var(--gradient1),
+      var(--gradient2)
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      -webkit-animation: buttons 200s ease infinite;
+      background-size: 5000% 5000%;
+
 }
 
-/* Lock test test */
+/* Lock test */
 .userSettingsSecurity-3IYeMF .lockIcon-2Hj8Tq{
   color: -webkit-linear-gradient(39deg, var(--primary), var(--secondary) 110% );
+}
+
+/* Better roles thanks to Cynthia ((755404583601176636)) */
+/* normally */
+.role-2irmRk {
+  position: relative;
+  overflow: hidden;
+}
+.roleCircle-3xAZ1j::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: .15;
+  pointer-events: none;
+}
+.roleName-32vpEy{
+  z-index: 1;
+}
+.footer-1fjuF6 {
+  border-top: none;
+}
+
+/* Unread server pills test ((!)) */
+.item-2hkk8m:not([style*="height: 8px"]){
+  background: linear-gradient(to bottom, 
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2),
+  var(--gradient1),
+  var(--gradient2));
+  background-size: 4000% 4000%;
+  animation: ServerPills 200s ease infinite;
+  width: 20px;
+  border-radius: 25px;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 255, 255,1) 70%);
+}
+/* Unread channels test */
+.unread-2lAfLh{
+  top: 20%;
+  padding: 10px 8px;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 255, 255,1) 110%);
+}
+/* Makes hovering and selecting them smoother */
+.item-2hkk8m{
+  transition: all .14s ease;}
+
+/* Powercord updater icon colors */
+.powercord-updater .animated path[fill='#7289da']/* Checking for updates */{
+  fill: var(--primary);
+}
+.powercord-updater .icon path[fill='#43b581'] /* Up to date */{
+  fill: var(--secondary);
+}
+.powercord-updater .icon path[fill='#faa61a'] /* Updates are abailable */{
+  fill: var(--warning);
+}
+
+/* top bars */
+/* Blue top bars */
+.colorBrand-2zeG8h/* Plugin X has an update */, 
+.notice-2X5hT5 /* Preview mode */,
+.notice-3uyY6c /* Server preview mode */,
+.colorInfo-2URYW5{
+  box-shadow: none;
+  background-color: transparent;
+  background-image: linear-gradient(var(--primary), transparent) !important;
+  background-repeat: no-repeat;
+}
+/* Plugged Powercord succsessfully */
+.notice-3bPHh-{
+  box-shadow: none;
+  background-color: transparent;
+  background-image: linear-gradient(var(--secondary), transparent);
+  background-repeat: no-repeat;
+}
+/* Same as above, streaming */
+.colorStreamerMode-2SJAUN{
+  box-shadow: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--streaming), transparent);
+ }
+/* Above, but red, and for not detecing audio */
+.colorDanger-4gmAY0{
+  box-shadow: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--danger), transparent);
+ }
+
+ /* Code mirror test */
+ .CodeMirror-hscrollbar{
+   background-color: var(--background-secondary-alt);
+ }
+ .powercord-quickcss .CodeMirror-gutters{
+   border-color: var(--background-secondary-alt);
+ }
+
+ /* Faded mentions thanks to Doggybootsy ((834515917479477278)) */
+
+ .unreadTop-3rAB3r{
+  width:240px;
+  border-radius: 0;
+  padding: 0;
+}
+.unreadTop-3rAB3r .bar-30k2ka:not(.mention-1f5kbO){
+  border-radius: 0;
+  background: linear-gradient( to top, var(--background-accent), transparent);
+  box-shadow: none;
+}
+.unreadTop-3rAB3r .bar-30k2ka.mention-1f5kbO{
+  border-radius: 0;
+  background: linear-gradient(var(--danger), transparent);
+  box-shadow: none;
+}
+.unreadBottom-1_LF_w {
+  width:240px;
+  border-radius: 0;
+  padding:0;
+}
+.unreadBottom-1_LF_w  .bar-30k2ka:not(.mention-1f5kbO){
+  border-radius: 0;
+  background: linear-gradient(to bottom, var(--background-accent), transparent);
+  box-shadow: none;
+}
+.unreadBottom-1_LF_w  .bar-30k2ka.mention-1f5kbO{
+  border-radius: 0;
+  background: linear-gradient(0deg, var(--danger), transparent);
+  box-shadow: none;
+}
+.unreadMentionsIndicatorBottom-2mDYbI{
+  padding:0px;
+  height:24px;
+}
+.unreadMentionsIndicatorBottom-2mDYbI .unreadMentionsBar-1Bu1dC{
+  border-radius: 0px;
+  background: linear-gradient(0deg, var(--danger), transparent);
+}
+.unreadMentionsIndicatorTop-2-tcdU{
+  padding:0px;
+  height:24px;
+}
+.unreadMentionsIndicatorTop-2-tcdU .unreadMentionsBar-1Bu1dC{
+  border-radius: 0;
+  background: linear-gradient(var(--danger), transparent);
+}
+
+/* Number badge */
+.numberBadge-2s8kKX{
+  background-color: hsl(var(--danger-hue), calc(var(--saturation-factor, 1) * 82.6%), var(--danger-lightness)) !important;
 }

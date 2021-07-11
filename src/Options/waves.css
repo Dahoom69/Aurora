@@ -1,0 +1,35 @@
+/** Waves **/ /* .notice-3bPHh- is the green top bar when powercord is plugged correctly */
+
+/* Blue top bars */
+.colorBrand-2zeG8h/* Plugin X has an update */, 
+.notice-2X5hT5 /* Preview mode */,
+.notice-3uyY6c /* Server preview mode */,
+.colorInfo-2URYW5{
+  box-shadow: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Update%20Plugin.svg);
+}
+
+/* Above, but red, and for not detecing audio */
+.colorDanger-4gmAY0{
+  box-shadow: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/No%20Audio.svg);
+ }
+
+/* Same as above, streaming */
+.colorStreamerMode-2SJAUN{
+  box-shadow: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url(https://raw.githubusercontent.com/Dahoom69/Aurora/master/SVGs/Streaming.svg);
+ }
+
+
+/* Test for the server boost backgrond*/
+#app-mount .ctaBar-2UsjF2{
+  background-image: url(https://discordapp.com/assets/94ff6fdc535b6ecb7b1bc54f2dd56a10.svg);
+  stroke-width: 10px;
+}
