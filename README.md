@@ -15,3 +15,9 @@ to port spectra's Nocturnal theme to powercord and improve on it, idk i never wr
 ### future plans
 
 porting it to scss under it's own repo
+
+
+
+
+
+# theme is put on hold because im a lazy ass who doesn't want to push the version i have untill it's fully completed even tho it has 0 bugs, nor am i willing to work quickly on it
